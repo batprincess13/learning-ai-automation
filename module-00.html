@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 00 | Why Automate? And Why Not?</title>
+  <meta name="description" content="Module 00: Why Automate? And Why Not? Learn how to decide what should and should not be automated." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img class="logo" src="assets/jenx-logo.png" alt="JENX.AI logo" /></a>
+    <nav class="nav">
+      <a href="index.html">Course Home</a>
+      <a href="#activity">Activity</a>
+      <a href="#next">What Comes Next</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow">Module 00</div>
+    <h1>Why Automate? And Why Not?</h1>
+    <p class="subtitle"><strong>Course:</strong> Learning AI Automation: Track 1 - No Code Path</p>
+    <p>By the end of this module, you should be able to evaluate a real business process and decide whether it should be automated, kept manual, or improved first.</p>
+  </section>
+
+  <div class="module-layout">
+    <aside class="sidebar">
+      <strong>Module Sections</strong>
+      <a href="#outcome">Outcome</a>
+      <a href="#understand-why">1. Understand Why</a>
+      <a href="#thinking-workspace">Activity 00.1</a>
+      <a href="#selection">2. Selection</a>
+      <a href="#three-gates">3. Three-Gate Framework</a>
+      <a href="#not-yet">4. Not Yet</a>
+      <a href="#activity">Activity 00.2</a>
+      <a href="#completion">Completion Check</a>
+      <a href="#next">What Comes Next</a>
+    </aside>
+
+    <article class="module-content">
+      <section id="outcome">
+        <h2>Outcome</h2>
+        <p>A working automation can still be a bad system.</p>
+        <ul>
+          <li>It can solve the wrong problem.</li>
+          <li>It can speed up a broken process.</li>
+          <li>It can create more maintenance than the manual work it replaced.</li>
+          <li>It can require so much human preparation that the “automation” becomes another manual process.</li>
+        </ul>
+        <p>This module gives you a decision framework before you build.</p>
+      </section>
+
+      <hr />
+
+      <section id="understand-why">
+        <h2>1. Before You Automate: Understand Why</h2>
+        <p>Automation is not automatically improvement.</p>
+        <p>A system can run correctly and still solve the wrong problem. It can make a broken process faster, produce cleaner-looking output, or move work between tools without creating real value.</p>
+        <p>Before you decide to automate, understand:</p>
+        <ul>
+          <li>What problem you are solving</li>
+          <li>Why the problem matters</li>
+          <li>What should change if the automation works</li>
+          <li>Whether automation is the right solution</li>
+          <li>Whether the process is ready to become a system</li>
+        </ul>
+        <p>AI can summarize, classify, draft, extract, and move information through a workflow.</p>
+        <p>But AI does not own the goal.</p>
+        <p>You do.</p>
+        <p>The system can execute the workflow. You are responsible for the direction, judgment, and business logic behind it.</p>
+
+        <h3>Example: Same visible issue, different automation</h3>
+        <p>A business wants to automate customer complaint responses.</p>
+        <p>That sounds reasonable, but the right automation depends on the real problem.</p>
+        <table>
+          <thead><tr><th>Possible problem</th><th>Better automation direction</th></tr></thead>
+          <tbody>
+            <tr><td>Slow response time</td><td>Draft first replies and route urgent issues faster</td></tr>
+            <tr><td>Inconsistent answers</td><td>Use approved response templates and policy retrieval</td></tr>
+            <tr><td>Missing escalation rules</td><td>Classify complaints and route high-risk cases</td></tr>
+            <tr><td>Repeated product issues</td><td>Track complaint patterns by product, location, or vendor</td></tr>
+            <tr><td>Poor customer visibility</td><td>Send status updates and flag unresolved cases</td></tr>
+          </tbody>
+        </table>
+        <p>Same visible issue. Different root problem. Different automation.</p>
+        <p>When automation works, it repeats your logic at scale.</p>
+        <p><strong>Good logic becomes leverage. Bad logic becomes repeated failure.</strong></p>
+      </section>
+
+      <section id="thinking-workspace">
+        <h2>Activity 00.1: Create Your Thinking Workspace</h2>
+        <p>This course will not teach critical thinking, root cause analysis, or decision-making as separate subjects.</p>
+        <p>But these skills affect every automation decision you make.</p>
+        <p>If you want a dedicated space to strengthen that foundation, create a workspace inside the AI tool you already use.</p>
+        <ul>
+          <li>ChatGPT Projects</li>
+          <li>Claude Projects</li>
+          <li>Gemini Gems</li>
+          <li>Another AI workspace that allows saved instructions or project context</li>
+        </ul>
+        <p>Name the workspace:</p>
+        <pre>Thinking Foundations</pre>
+        <p>or:</p>
+        <pre>Pre-Automation Mindset</pre>
+        <p>Paste this as the project instruction:</p>
+        <pre>I am building my critical thinking and problem-solving foundation before starting AI automation training.
+
+Help me learn deeply, not quickly.
+
+Ask me questions.
+Test my understanding.
+Give me real examples.
+Push back when my reasoning is shallow.
+Help me distinguish symptoms from root causes.
+Help me decide when automation is useful and when it is not.</pre>
+        <p>Use this workspace when you need to pressure-test an automation idea before building.</p>
+        <p>This is not about outsourcing judgment to AI. It is about improving the quality of your own judgment before you turn a process into a system.</p>
+      </section>
+
+      <hr />
+
+      <section id="selection">
+        <h2>2. What to Automate, What Not to Automate, and What Is Not Ready Yet</h2>
+        <p>Not every process should be automated.</p>
+        <ul>
+          <li>Some should be automated.</li>
+          <li>Some should be partially automated.</li>
+          <li>Some should not be automated yet.</li>
+          <li>Some should not be fully automated without human control.</li>
+        </ul>
+        <p>The first skill is not building.</p>
+        <p>The first skill is selection.</p>
+        <p>You need to know which process deserves automation before you spend time building it.</p>
+
+        <h3>What is usually worth automating</h3>
+        <p>Good automation candidates usually have:</p>
+        <ul>
+          <li>Repeated work</li>
+          <li>Clear inputs</li>
+          <li>Predictable outputs</li>
+          <li>Known steps</li>
+          <li>Explainable rules</li>
+          <li>Real value if the work becomes faster or more consistent</li>
+        </ul>
+
+        <h3>Practical examples across common business areas</h3>
+        <table>
+          <thead><tr><th>Area</th><th>Use case</th><th>Why it may be worth automating</th></tr></thead>
+          <tbody>
+            <tr><td>Marketing</td><td>Content repurposing workflow</td><td>A long article, webinar, podcast, or video transcript can be turned into draft posts, email snippets, captions, and campaign assets for review.</td></tr>
+            <tr><td>Marketing</td><td>Lead magnet follow-up</td><td>A download or sign-up can trigger tagging, email follow-up, CRM update, and sales notification.</td></tr>
+            <tr><td>Sales</td><td>Lead intake and first response</td><td>Form submissions can be logged, acknowledged, assigned, and tracked without manual copying.</td></tr>
+            <tr><td>Customer service</td><td>Support ticket triage</td><td>Requests can be categorized, prioritized, routed, and summarized before a human responds.</td></tr>
+            <tr><td>Individual contributor</td><td>Meeting notes to action items</td><td>Notes can be turned into decisions, tasks, owners, and deadlines for review.</td></tr>
+            <tr><td>Manager / operations</td><td>Weekly status report</td><td>Updates from task boards, messages, and trackers can be collected and organized into a consistent report.</td></tr>
+            <tr><td>Finance / admin</td><td>Invoice tracking and approval routing</td><td>Invoice emails can be detected, saved, logged, and routed to the right approver.</td></tr>
+            <tr><td>HR / recruitment</td><td>Candidate intake summary</td><td>Applications can be summarized, missing information flagged, and interview notes organized for review.</td></tr>
+            <tr><td>Product / service teams</td><td>Feedback clustering</td><td>Customer feedback can be grouped by theme, frequency, urgency, and product area.</td></tr>
+            <tr><td>Legal / compliance</td><td>Intake and document checklist</td><td>Submitted information can be organized, missing documents flagged, and review packets prepared.</td></tr>
+            <tr><td>E-commerce / retail</td><td>Review analysis</td><td>Product reviews can be grouped into complaints, praise, feature requests, and recurring issues.</td></tr>
+            <tr><td>Education / training</td><td>Learner feedback summary</td><td>Survey responses, quiz results, and comments can be summarized into patterns and action items.</td></tr>
+            <tr><td>Healthcare / clinics</td><td>Appointment and intake routing</td><td>Appointment requests and intake forms can be routed, checked for missing details, and prepared for staff review.</td></tr>
+            <tr><td>Real estate / construction</td><td>Project status consolidation</td><td>Site updates, vendor notes, and document requirements can be consolidated into status summaries and follow-up lists.</td></tr>
+          </tbody>
+        </table>
+        <blockquote>Automate work that is repeated, structured, and useful enough that removing manual effort creates clear value.</blockquote>
+        <p>Do not automate just because the task is annoying.</p>
+        <p>Automate when the process has enough structure and value to justify the system.</p>
+
+        <h3>What should be partially automated</h3>
+        <p>Some work should not be fully automated, but parts of it can be.</p>
+        <p>This usually applies when the process has both routine work and judgment-heavy work.</p>
+        <table>
+          <thead><tr><th>Process</th><th>What automation can do</th><th>What humans should still do</th></tr></thead>
+          <tbody>
+            <tr><td>Customer complaint handling</td><td>Categorize issue, summarize history, draft response, flag urgency</td><td>Handle sensitive replies, refunds, escalation, relationship repair</td></tr>
+            <tr><td>Marketing campaign execution</td><td>Generate asset variants, route drafts, track approvals, prepare reporting</td><td>Decide strategy, positioning, offer, final messaging, brand judgment</td></tr>
+            <tr><td>Legal intake</td><td>Organize facts, summarize timeline, identify missing documents</td><td>Legal analysis, advice, strategy, final review</td></tr>
+            <tr><td>Hiring workflow</td><td>Sort applications, identify missing information, summarize candidate profiles</td><td>Interview, assess fit, make final hiring decision</td></tr>
+            <tr><td>Financial review</td><td>Extract amounts, compare records, flag mismatches</td><td>Approve payment, investigate risk, decide exceptions</td></tr>
+            <tr><td>Healthcare admin</td><td>Route appointment requests, check intake completeness, summarize notes</td><td>Clinical judgment, diagnosis, treatment decisions, sensitive patient communication</td></tr>
+          </tbody>
+        </table>
+        <p>Partial automation is often the most realistic business use case.</p>
+        <p><strong>The automation prepares. The human decides.</strong></p>
+
+        <h3>What is not ready yet</h3>
+        <p>A process may be a bad automation candidate today but become a good candidate later.</p>
+        <p>That usually means the issue is not the idea. The issue is readiness.</p>
+        <p>A process is not ready yet when:</p>
+        <ul>
+          <li>The problem is unclear</li>
+          <li>The workflow is undocumented</li>
+          <li>Inputs are inconsistent</li>
+          <li>The output is not defined</li>
+          <li>Rules are not agreed upon</li>
+          <li>Exceptions are too frequent</li>
+          <li>People do the same process differently</li>
+          <li>Human work is required at almost every step</li>
+        </ul>
+        <p>“Not yet” is a valid professional answer.</p>
+        <p>It means something must happen first:</p>
+        <ul>
+          <li>Define the problem</li>
+          <li>Document the workflow</li>
+          <li>Standardize the inputs</li>
+          <li>Clarify the output</li>
+          <li>Separate routine work from judgment work</li>
+          <li>Reduce unnecessary exceptions</li>
+          <li>Decide where human review belongs</li>
+        </ul>
+
+        <h3>What should not be fully automated without human control</h3>
+        <p>Some processes should not be handed over to automation as the final decision or final action.</p>
+        <p>This does not mean AI cannot help. It means automation must stop before the point where human accountability is required.</p>
+        <p>The test is consequence.</p>
+        <p>If the automation could materially affect someone’s rights, safety, health, money, employment, access, legal position, reputation, or trust in the business, the final decision should remain under qualified human control.</p>
+        <p>AI may assist with preparation:</p>
+        <ul>
+          <li>Summarizing records</li>
+          <li>Organizing facts</li>
+          <li>Extracting key details</li>
+          <li>Flagging missing information</li>
+          <li>Drafting options</li>
+          <li>Preparing review packets</li>
+          <li>Routing cases to the right person</li>
+        </ul>
+        <p>But the decision or final action should not be fully automated when the risk, consequence, or accountability requirement is high.</p>
+
+        <table>
+          <thead><tr><th>Area</th><th>AI may assist with</th><th>Do not fully automate without human control</th></tr></thead>
+          <tbody>
+            <tr><td>Employment</td><td>Summarize records, flag missing documentation, prepare timelines</td><td>Termination, discipline, final hiring or promotion decisions</td></tr>
+            <tr><td>Legal</td><td>Organize facts, draft summaries, identify missing documents</td><td>Legal advice, legal strategy, final legal judgment</td></tr>
+            <tr><td>Healthcare</td><td>Route intake, check completeness, summarize notes</td><td>Diagnosis, treatment decisions, clinical judgment</td></tr>
+            <tr><td>Finance / credit / benefits</td><td>Extract data, match records, flag unusual items</td><td>High-risk approvals, eligibility decisions, fraud-sensitive decisions</td></tr>
+            <tr><td>Education</td><td>Summarize learner progress, flag missing submissions</td><td>High-impact grading, disciplinary, or access decisions</td></tr>
+            <tr><td>Public safety / physical operations</td><td>Monitor signals, summarize incidents, flag anomalies</td><td>Safety-critical action without human oversight</td></tr>
+            <tr><td>Brand / public communication</td><td>Draft options, repurpose content, check consistency</td><td>Crisis statements, legal claims, sensitive public messaging</td></tr>
+            <tr><td>Client relationship issues</td><td>Summarize history, flag urgency, draft response points</td><td>Concessions, apologies, escalations, relationship repair</td></tr>
+          </tbody>
+        </table>
+        <blockquote>This list is not exhaustive. The rule is not “never use AI here.” The rule is: do not let automation own a high-consequence decision without human control.</blockquote>
+      </section>
+
+      <hr />
+
+      <section id="three-gates">
+        <h2>3. The Three-Gate Decision Framework</h2>
+        <p>Before building any automation, pass the idea through three gates:</p>
+        <ol>
+          <li><strong>Intent</strong></li>
+          <li><strong>Process</strong></li>
+          <li><strong>Human Intervention</strong></li>
+        </ol>
+        <p>Each gate has three possible outcomes:</p>
+        <pre>Yes
+No
+Not yet</pre>
+        <p>A process should pass all three before you build.</p>
+        <p>If it fails one gate, stop and define what needs to happen first.</p>
+
+        <h3>Gate 1: Intent</h3>
+        <h4>Core question</h4>
+        <blockquote>Why are we automating this?</blockquote>
+        <p>Gate 1 checks whether the automation should exist.</p>
+        <p>It tests purpose, value, root problem, expected benefit, and business reason.</p>
+        <p>Ask:</p>
+        <ul>
+          <li>What problem are we solving?</li>
+          <li>Why does this problem matter?</li>
+          <li>Who is affected?</li>
+          <li>How often does it happen?</li>
+          <li>What does it cost in time, delay, errors, or missed opportunities?</li>
+          <li>What should improve if the automation works?</li>
+          <li>Are we solving the root problem or only making the symptom move faster?</li>
+        </ul>
+        <h4>A process passes Gate 1 when:</h4>
+        <ul>
+          <li>The problem is real</li>
+          <li>The purpose is clear</li>
+          <li>The expected value is meaningful</li>
+          <li>The automation addresses the right problem</li>
+          <li>The benefit is worth the effort to build and maintain it</li>
+        </ul>
+        <h4>A process fails Gate 1 when:</h4>
+        <ul>
+          <li>The goal is “we need to use AI somewhere”</li>
+          <li>The problem is vague</li>
+          <li>The task is annoying but not valuable enough to automate</li>
+          <li>The automation would cost more effort than the problem is worth</li>
+          <li>The process is being reshaped only to fit what the tool can easily do</li>
+          <li>The real issue is being ignored</li>
+        </ul>
+        <h4>Example</h4>
+        <p>A manager wants to automate weekly reporting because “reporting takes too long.”</p>
+        <p>Gate 1 questions:</p>
+        <ul>
+          <li>What exactly takes too long?</li>
+          <li>Pulling the data?</li>
+          <li>Cleaning the data?</li>
+          <li>Writing the summary?</li>
+          <li>Explaining the variance?</li>
+          <li>Sending the update?</li>
+          <li>Getting people to read it?</li>
+        </ul>
+        <p>If the real issue is scattered data, automation may help collect and organize information.</p>
+        <p>If the real issue is that leadership has not agreed on which metrics matter, automation will not fix that.</p>
+        <h4>Gate 1 decision</h4>
+        <pre>Yes -> Move to Gate 2.
+No -> Stop. Define the problem first.
+Not yet -> Clarify the problem, value, cost, and expected outcome.</pre>
+
+        <h3>Gate 2: Process</h3>
+        <h4>Core question</h4>
+        <blockquote>Is the process clear, repeatable, and structured enough to automate?</blockquote>
+        <p>Gate 2 checks whether the work can become a system.</p>
+        <p>It tests trigger, inputs, steps, rules, outputs, exceptions, and repeatability.</p>
+        <p>Ask:</p>
+        <ul>
+          <li>What starts the process?</li>
+          <li>What information is needed?</li>
+          <li>Where does that information come from?</li>
+          <li>What steps usually happen?</li>
+          <li>What rules guide the process?</li>
+          <li>What output should be produced?</li>
+          <li>Where does the output go?</li>
+          <li>What exceptions happen?</li>
+          <li>Are the exceptions manageable?</li>
+        </ul>
+        <h4>A process passes Gate 2 when:</h4>
+        <ul>
+          <li>The trigger is clear</li>
+          <li>The inputs are known</li>
+          <li>The steps can be described</li>
+          <li>The output is predictable</li>
+          <li>The standard path happens more often than the exceptions</li>
+          <li>Exceptions can be identified and routed properly</li>
+        </ul>
+        <h4>A process fails Gate 2 when:</h4>
+        <ul>
+          <li>No one can explain the steps consistently</li>
+          <li>Each person handles the process differently</li>
+          <li>The inputs change too much</li>
+          <li>The output is unclear</li>
+          <li>The rules are undocumented</li>
+          <li>Exceptions are more common than the standard path</li>
+          <li>The process only works because someone “just knows what to do”</li>
+        </ul>
+        <h4>Example</h4>
+        <p>A business wants to automate client onboarding.</p>
+        <p>Gate 2 questions:</p>
+        <ul>
+          <li>What starts onboarding?</li>
+          <li>Signed contract?</li>
+          <li>Paid invoice?</li>
+          <li>Approved intake form?</li>
+          <li>Internal approval?</li>
+          <li>What information must be collected?</li>
+          <li>What tools need to be updated?</li>
+          <li>What messages need to be sent?</li>
+          <li>What exceptions happen?</li>
+          <li>Who handles missing information?</li>
+        </ul>
+        <p>If onboarding follows a mostly consistent path, it may be automation-ready.</p>
+        <p>If every onboarding is improvised, document and standardize the process first.</p>
+        <h4>Gate 2 decision</h4>
+        <pre>Yes -> Move to Gate 3.
+No -> Document and standardize the process first.
+Not yet -> Identify the consistent core, map the exceptions, then revisit.</pre>
+
+        <h3>Gate 3: Human Intervention</h3>
+        <h4>Core question</h4>
+        <blockquote>Can this automation run meaningfully without constant human work?</blockquote>
+        <p>Gate 3 checks how much human work must remain for the automation to function.</p>
+        <p>Human involvement is not automatically bad. Some processes require human review, approval, judgment, manual input, or exception handling.</p>
+        <p>The issue is whether those human touchpoints are limited, intentional, and worth it.</p>
+        <p>Ask:</p>
+        <ul>
+          <li>Where is human judgment required?</li>
+          <li>Where is human approval required?</li>
+          <li>Where is manual input still needed?</li>
+          <li>Is that input occasional or constant?</li>
+          <li>Will people need to prepare data every time just to make the automation work?</li>
+          <li>Will people need to check or correct the output every time?</li>
+          <li>Does the automation reduce work, or does it simply move the work somewhere else?</li>
+          <li>If human intervention is required often, does the value still justify the automation?</li>
+        </ul>
+        <h4>A process passes Gate 3 when:</h4>
+        <ul>
+          <li>Human touchpoints are limited and intentional</li>
+          <li>Review or approval happens at defined checkpoints</li>
+          <li>The automation completes meaningful work before human review</li>
+          <li>Manual input is occasional or part of setup, not constant</li>
+          <li>The automation reduces effort, delay, errors, or inconsistency after human work is counted</li>
+        </ul>
+        <h4>A process fails Gate 3 when:</h4>
+        <ul>
+          <li>A person must intervene at almost every step</li>
+          <li>People must repeatedly prepare or reformat data just to feed the system</li>
+          <li>The output needs constant correction</li>
+          <li>The automation creates more monitoring work than it removes</li>
+          <li>The human is still doing most of the process</li>
+          <li>The automation only moves manual work to a different part of the workflow</li>
+        </ul>
+        <h4>Example</h4>
+        <p>A company wants to automate a weekly report.</p>
+        <p>Automation may work if the system can pull data from reliable sources, organize it, draft the report, and flag missing information.</p>
+        <p>But it may fail Gate 3 if a person must first clean the data, rewrite the updates, check every source manually, fix the AI summary, and reformat the report every week.</p>
+        <p>At that point, the automation may not be reducing work. It may only be changing where the manual work happens.</p>
+        <h4>Gate 3 decision</h4>
+        <pre>Yes -> Build it. Design human touchpoints deliberately.
+No -> Do not automate yet. Simplify the process or reduce manual dependency first.
+Not yet -> Separate routine work from human intervention, then revisit.</pre>
+      </section>
+
+      <hr />
+
+      <section id="not-yet">
+        <h2>4. The “Not Yet” Outcome</h2>
+        <p>A weak builder treats “not automatable” as failure.</p>
+        <p>A stronger builder asks:</p>
+        <blockquote>What would make this automatable later?</blockquote>
+        <p>That question turns the failed gate into a work plan.</p>
+        <table>
+          <thead><tr><th>Failed gate</th><th>What it means</th><th>What to do first</th></tr></thead>
+          <tbody>
+            <tr><td>Gate 1: Intent</td><td>The purpose, value, or problem is unclear</td><td>Define the problem, cost, frequency, and expected benefit</td></tr>
+            <tr><td>Gate 2: Process</td><td>The workflow is not clear or repeatable enough</td><td>Map the process, standardize inputs, define outputs, document rules</td></tr>
+            <tr><td>Gate 3: Human Intervention</td><td>Too much human work is still required</td><td>Identify judgment points, reduce manual prep, simplify the workflow, define checkpoints</td></tr>
+          </tbody>
+        </table>
+        <p>“Not yet” is not a delay tactic. It is how you avoid building fragile systems.</p>
+      </section>
+
+      <hr />
+
+      <section id="activity">
+        <h2>Activity 00.2: Evaluate a Real Process</h2>
+        <p>Choose one real process from work, operations, sales, marketing, admin, customer service, finance, HR, or personal productivity.</p>
+        <p>Examples:</p>
+        <ul>
+          <li>Summarizing meeting notes</li>
+          <li>Preparing weekly reports</li>
+          <li>Responding to common customer inquiries</li>
+          <li>Organizing invoices</li>
+          <li>Updating a tracker from emails</li>
+          <li>Preparing client intake summaries</li>
+          <li>Creating follow-up messages</li>
+          <li>Routing requests to the right person</li>
+          <li>Monitoring missing documents</li>
+          <li>Consolidating project updates</li>
+          <li>Repurposing marketing content</li>
+          <li>Following up with leads after a download or inquiry</li>
+          <li>Summarizing campaign performance</li>
+          <li>Grouping customer feedback by theme</li>
+          <li>Routing support tickets by urgency</li>
+        </ul>
+
+        <h3>Process selected</h3>
+        <pre>What process are you evaluating?</pre>
+
+        <h3>Gate 1: Intent</h3>
+        <pre>Why are you considering automation?
+
+What problem does this process create today?
+
+How often does it happen?
+
+How much time, delay, error, or frustration does it create?
+
+Who is affected?
+
+What should improve if this automation works?
+
+Is this solving a root problem or only a symptom?
+
+Decision: Yes / No / Not yet</pre>
+
+        <h3>Gate 2: Process</h3>
+        <pre>What triggers the process?
+
+What inputs are needed?
+
+Where do those inputs come from?
+
+What steps usually happen?
+
+What rules guide the process?
+
+What output should be produced?
+
+Where does the output go?
+
+What exceptions happen?
+
+Are the exceptions manageable?
+
+Decision: Yes / No / Not yet</pre>
+
+        <h3>Gate 3: Human Intervention</h3>
+        <pre>Where is human judgment required?
+
+Where is human approval required?
+
+Where is manual input still needed?
+
+Is that human input occasional or constant?
+
+Will someone need to prepare data every time just so the automation can run?
+
+Will someone need to check or correct the output every time?
+
+After counting the human work, does the automation still reduce effort, delay, or errors?
+
+Decision: Yes / No / Not yet</pre>
+
+        <h3>Final decision</h3>
+        <pre>Automate now / Keep manual / Not yet</pre>
+
+        <h3>If the answer is “not yet”</h3>
+        <pre>What needs to happen first?
+
+Clarify intent?
+Define the problem?
+Document the process?
+Standardize inputs?
+Clarify the output?
+Map exceptions?
+Create decision rules?
+Reduce human intervention?
+Add intentional review points?</pre>
+      </section>
+
+      <hr />
+
+      <section id="completion">
+        <h2>5. Module 00 Completion Check</h2>
+        <p>You are ready to move on when you can explain:</p>
+        <ul>
+          <li>Why automation does not automatically improve a process</li>
+          <li>Why intent matters before building</li>
+          <li>What makes a process worth automating</li>
+          <li>What makes a process clear and repeatable enough to automate</li>
+          <li>Why human intervention must be counted honestly</li>
+          <li>Why “not yet” is a valid automation decision</li>
+          <li>How to apply the Three-Gate Decision Framework to a real process</li>
+        </ul>
+        <p>You do not need to know Make.com yet.</p>
+        <p>You do not need to know APIs yet.</p>
+        <p>You do not need to connect apps yet.</p>
+        <p>At this point, the skill is decision quality.</p>
+        <p>You are learning to decide what deserves automation before you build.</p>
+      </section>
+
+      <hr />
+
+      <section id="next">
+        <h2>6. What Comes Next</h2>
+        <p>If your process passed all three gates, it may be a good automation candidate.</p>
+        <p>But you still should not open the automation tool first.</p>
+        <p>The next step is to map the process as a system.</p>
+        <p>In Module 01, you will learn how to break a workflow into:</p>
+        <pre>Trigger -> Input -> Logic -> Action -> Output -> Review</pre>
+        <p>That structure matters because tools do not fix unclear workflow logic.</p>
+        <p>If you cannot map the process, you are not ready to automate it.</p>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <p>© JENX.AI. Learning AI Automation: Track 1 - No Code Path.</p>
+</footer>
+</body>
+</html>
