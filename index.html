@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning AI Automation: Track 1 - No Code Path | Module 00</title>
+  <meta name="description" content="Module 00 of Learning AI Automation: Track 1 - No Code Path. Learn how to decide what should be automated before building." />
+  <style>
+    :root {
+      --ink: #171717;
+      --muted: #5f6368;
+      --line: #e6e6e6;
+      --bg: #f7f7f5;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--line);
+      padding: 18px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo {
+      height: 38px;
+      width: auto;
+      display: block;
+    }
+    .nav {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      font-size: 14px;
+    }
+    .nav a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav a:hover { text-decoration: underline; }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 56px;
+    }
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 42px;
+      margin-bottom: 24px;
+    }
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      letter-spacing: -0.03em;
+    }
+    .subtitle {
+      font-size: 20px;
+      max-width: 820px;
+      color: #333;
+      margin: 0 0 28px;
+    }
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: 1px solid var(--ink);
+      text-decoration: none;
+      font-weight: 700;
+      color: var(--ink);
+      background: var(--card);
+    }
+    .button.primary {
+      color: #fff;
+      background: var(--ink);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px;
+    }
+    h2 {
+      font-size: 26px;
+      margin: 0 0 14px;
+      letter-spacing: -0.02em;
+    }
+    h3 {
+      font-size: 18px;
+      margin: 0 0 8px;
+    }
+    p { margin: 0 0 12px; }
+    ul { margin-top: 10px; padding-left: 20px; }
+    .module-viewer {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    .viewer-header {
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .viewer-header p {
+      margin: 0;
+      color: var(--muted);
+    }
+    iframe {
+      width: 100%;
+      height: 82vh;
+      border: 0;
+      display: block;
+      background: #fff;
+    }
+    footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 32px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 760px) {
+      header { position: static; }
+      .header-inner { align-items: flex-start; flex-direction: column; }
+      .hero { padding: 26px; }
+      .grid { grid-template-columns: 1fr; }
+      iframe { height: 70vh; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img class="logo" src="assets/jenx-logo.png" alt="JENX.AI logo" />
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#module">Module 00</a>
+        <a href="assets/module-00.pdf" download>Download PDF</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="eyebrow">Free Course | Track 1</div>
+      <h1>Learning AI Automation: Track 1 - No Code Path</h1>
+      <p class="subtitle">
+        Learn practical AI automation using common no-code tools. This course is for AI-literate professionals who want to move beyond chat-based AI use and start building workflows for real business use cases.
+      </p>
+      <p>
+        You will learn how automation systems work, how to decide what should be automated, how common no-code tools fit together, and how AI can function inside a workflow.
+      </p>
+      <div class="button-row">
+        <a class="button primary" href="#module">Start Module 00</a>
+        <a class="button" href="assets/module-00.pdf" download>Download Module PDF</a>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Course overview">
+      <div class="card">
+        <h3>Who this is for</h3>
+        <p>AI-literate professionals who know tools like ChatGPT, Claude, or Gemini, but are new to building automation systems.</p>
+      </div>
+      <div class="card">
+        <h3>What you will use</h3>
+        <p>Common no-code tools such as Zapier, Make.com, Airtable, Google Workspace, OpenAI, and Claude.</p>
+      </div>
+      <div class="card">
+        <h3>What you will build toward</h3>
+        <p>Practical workflows that can support marketing, sales, operations, admin, customer support, and other business functions.</p>
+      </div>
+    </section>
+
+    <section class="card" style="margin-bottom:24px;">
+      <h2>Course Syllabus</h2>
+      <ul>
+        <li><strong>Module 00:</strong> Why Automate? And Why Not?</li>
+        <li><strong>Module 01:</strong> How Systems Think</li>
+        <li><strong>Module 02:</strong> How Tools Talk</li>
+        <li><strong>Module 03:</strong> Build Environment: Common No-Code Automation Tools</li>
+        <li><strong>Module 04:</strong> AI as a Worker</li>
+        <li><strong>Module 05:</strong> The Data Layer</li>
+        <li><strong>Module 06:</strong> Deliver &amp; Hand Off</li>
+      </ul>
+    </section>
+
+    <section class="module-viewer" id="module">
+      <div class="viewer-header">
+        <div>
+          <h2 style="margin-bottom:4px;">Module 00: Why Automate? And Why Not?</h2>
+          <p>Read the module below or download the PDF.</p>
+        </div>
+        <a class="button" href="assets/module-00.pdf" download>Download PDF</a>
+      </div>
+      <iframe src="assets/module-00.pdf" title="Module 00 PDF"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <p>© JENX.AI. Course material for Learning AI Automation: Track 1 - No Code Path.</p>
+  </footer>
+</body>
+</html>
