@@ -7,15 +7,15 @@
   <meta name="description" content="Module 01: How Systems Think. Learn how to map a business process as a buildable automation system before opening any tool." />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body>
+<body class="learning-shell">
 <header>
   <div class="header-inner">
     <a href="index.html"><img class="logo" src="assets/jenx-logo.png" alt="JENX.AI logo" /></a>
     <nav class="nav">
       <a href="index.html">Course Home</a>
       <a href="module-00.html">Module 00</a>
-      <a href="#activity-1">Activity</a>
-      <a href="#next">What Comes Next</a>
+      <a href="#map-builder">System Map Builder</a>
+      <a href="#build-ready">Build-Ready Check</a>
     </nav>
   </div>
 </header>
@@ -26,32 +26,37 @@
     <h1>How Systems Think</h1>
     <p class="subtitle"><strong>Course:</strong> Learning AI Automation: Track 1 - No Code Path</p>
     <p>By the end of this module, you should be able to take a real business process and map it as a system before touching any automation tool.</p>
+    <div class="lesson-map" aria-label="Module learning path">
+      <span class="lesson-step">1. Understand</span>
+      <span class="lesson-step">2. Map</span>
+      <span class="lesson-step">3. Compare</span>
+      <span class="lesson-step">4. Build</span>
+      <span class="lesson-step">5. Check</span>
+    </div>
   </section>
 
   <div class="module-layout">
     <aside class="sidebar">
       <strong>Module Sections</strong>
       <a href="#outcome">Outcome</a>
-      <a href="#what-is-system">1. What Is a System?</a>
-      <a href="#task-to-system">2. Task to System</a>
-      <a href="#core-map">3. Core System Map</a>
-      <a href="#happy-path">4. Happy Path</a>
-      <a href="#paths">5. Standard vs Exception</a>
-      <a href="#ai-logic">6. AI and Logic</a>
-      <a href="#template">7. System Map Template</a>
+      <a href="#system-thinking">System Thinking</a>
+      <a href="#core-map">Core System Map</a>
+      <a href="#data-structure">Structured Data</a>
+      <a href="#logic-ownership">Decision Ownership</a>
+      <a href="#paths">Standard vs Exception</a>
       <a href="#examples">Examples</a>
-      <a href="#activity-1">Activity 01.1</a>
+      <a href="#map-builder">System Map Builder</a>
       <a href="#build-ready">Build-Ready Check</a>
-      <a href="#activity-2">Activity 01.2</a>
-      <a href="#mistakes">Mistakes to Avoid</a>
-      <a href="#deliverable">Deliverable</a>
-      <a href="#completion">Completion Check</a>
+      <a href="#mistakes">Mistakes</a>
       <a href="#next">What Comes Next</a>
     </aside>
 
     <article class="module-content">
       <section id="outcome">
-        <h2>Outcome</h2>
+        <span class="panel-label">Outcome</span>
+        <h2>What you should be able to do</h2>
+        <p>Module 00 helped you decide whether a process deserves automation.</p>
+        <p>Module 01 teaches you how to turn that selected process into a buildable system.</p>
         <p>By the end of this module, you should be able to identify:</p>
         <ul>
           <li>What starts the workflow</li>
@@ -61,218 +66,139 @@
           <li>What output should be created</li>
           <li>Where human review belongs</li>
         </ul>
-        <p>Module 00 helped you decide whether a process deserves automation.</p>
-        <p>Module 01 teaches you how to turn that selected process into a buildable system.</p>
-        <p>A process that looks simple in conversation often becomes messy when you try to automate it. That is normal.</p>
-        <p>The work of a No-Code AI Automation Specialist is not to open an automation tool first.</p>
-        <p>Later in this course, you will use tools such as workflow automation platforms, AI tools, Airtable, and Google Workspace. Make.com is one example of a workflow automation platform. Tools in this category connect apps, move information, apply rules, and trigger actions without requiring the builder to write code.</p>
-        <p>But the tool should not come first.</p>
-        <p>The work is to make the process clear enough that a tool can follow it.</p>
+        <blockquote>The work is not to open an automation tool first. The work is to make the process clear enough that a tool can follow it.</blockquote>
+        <p>Later in this course, you will use tools such as workflow automation platforms, AI tools, Airtable, and Google Workspace. Make.com is one example of a workflow automation platform. The tool should not come first.</p>
       </section>
 
-      <hr />
-
-      <section id="what-is-system">
-        <h2>1. What Is a System?</h2>
+      <section id="system-thinking" class="interactive-panel">
+        <span class="panel-label">Concept</span>
+        <h2>1. What is a system?</h2>
         <p>Imagine you are making a school lunchbox every morning.</p>
-        <p>You do not just randomly grab food. You follow a system.</p>
+        <p>You do not randomly grab food. You follow a system:</p>
         <pre>When it is morning -> check what food is available -> choose lunch items -> pack them -> put the lunchbox in the bag -> parent checks it</pre>
-        <p>If there is no bread, you do not stop forever. You choose rice, fruit, or another snack.</p>
-        <p>If the water bottle is missing, someone has to find it.</p>
-        <p>If the lunchbox has food your child cannot eat, a parent needs to review it.</p>
-        <p>That is a system. It has a starting point, information needed, decisions, actions, output, review, and exceptions.</p>
-        <p>Business automation works the same way.</p>
-        <p>A tool cannot properly automate “prepare the report” unless you explain what starts the report, what information belongs in it, what rules matter, where the report goes, and who checks it.</p>
-        <p>If you cannot explain the system, the automation tool will not magically understand it.</p>
-        <p>AI may still produce an answer that looks useful. That is the risk.</p>
-        <p>AI often follows the direction you give it, even when the direction is incomplete. It can make weak thinking look organized. It can validate a bad workflow instead of challenging it. It can turn unclear instructions into confident-looking output.</p>
-        <p>That is why system thinking matters.</p>
-        <p>AI can amplify your thinking. <strong>It will not reliably fix your thinking by default.</strong></p>
+        <p>If there is no bread, you choose rice, fruit, or another snack. If the water bottle is missing, someone has to find it. If the lunchbox has food your child cannot eat, a parent needs to review it.</p>
+        <p>Business automation works the same way. A tool cannot properly automate “prepare the report” unless you explain what starts the report, what information belongs in it, what rules matter, where the report goes, and who checks it.</p>
+        <p>AI may still produce an answer that looks useful. That is the risk. AI can make weak thinking look organized. It can validate a bad workflow instead of challenging it.</p>
+        <blockquote>AI can amplify your thinking. It will not reliably fix your thinking by default.</blockquote>
       </section>
 
-      <section id="task-to-system">
-        <h2>2. From Task Thinking to System Thinking</h2>
+      <section class="interactive-panel">
+        <span class="panel-label">Shift</span>
+        <h2>2. From task thinking to system thinking</h2>
         <p>Most people describe work as tasks: send a follow-up email, summarize meeting notes, update the tracker, prepare the weekly report, route customer inquiries, or create social media posts.</p>
-        <p>That is task thinking. Task thinking focuses on the visible work.</p>
-        <p>System thinking asks what happens around the task.</p>
-        <p>A system thinker asks:</p>
-        <ul>
-          <li>What starts this task?</li>
-          <li>What information is needed?</li>
-          <li>Where does that information come from?</li>
-          <li>What form is it in?</li>
-          <li>What decision must be made?</li>
-          <li>Who or what makes that decision?</li>
-          <li>What rules guide that decision?</li>
-          <li>What should happen next?</li>
-          <li>What output is expected?</li>
-          <li>Where should the output go?</li>
-          <li>Who reviews it?</li>
-          <li>How is it reviewed?</li>
-          <li>What happens when something is missing, unclear, urgent, or risky?</li>
-        </ul>
-        <p>Automation requires system thinking because tools do not work from vague task labels.</p>
-        <p>They work from defined triggers, inputs, logic, actions, outputs, and review points.</p>
-        <p>Two simple thinking patterns are useful here:</p>
-        <pre>If this happens, then do this. Otherwise, do that.</pre>
-        <p>and:</p>
-        <pre>Who does what, by when, and how?</pre>
-        <p>These are not technical phrases. They are basic operating discipline. Automation just makes the discipline visible.</p>
+        <p>That is task thinking. It focuses on visible work.</p>
+        <p>System thinking asks what happens around the task:</p>
+        <div class="grid">
+          <div class="card"><h3>Start</h3><p>What starts this task? What event should the system watch for?</p></div>
+          <div class="card"><h3>Information</h3><p>What information is needed? Where does it come from? What form is it in?</p></div>
+          <div class="card"><h3>Decision</h3><p>What decision must be made? Who or what makes it? What rules guide it?</p></div>
+          <div class="card"><h3>Action</h3><p>What should happen next? What should be created, updated, routed, or sent?</p></div>
+          <div class="card"><h3>Review</h3><p>Who reviews it? How is it reviewed? Where should the system stop?</p></div>
+          <div class="card"><h3>Exceptions</h3><p>What happens when something is missing, unclear, urgent, risky, or conflicting?</p></div>
+        </div>
+        <p>Two useful thinking patterns:</p>
+        <pre>If this happens, then do this. Otherwise, do that.
+
+Who does what, by when, and how?</pre>
       </section>
 
-      <section id="core-map">
+      <section id="core-map" class="interactive-panel">
+        <span class="panel-label">Interactive Framework</span>
         <h2>3. The Core System Map</h2>
         <p>Every automation idea should be mapped using this structure:</p>
         <pre>Trigger -> Input -> Logic -> Action -> Output -> Review</pre>
-        <p>This is the basic mental model for no-code automation.</p>
-        <p>You will use it before opening any automation platform and before learning APIs, webhooks, or AI prompts inside workflows.</p>
-
-        <h3>Trigger</h3>
-        <p>The trigger is what starts the workflow. Examples include a form submission, email arrival, file upload, payment received, spreadsheet row added, CRM status change, scheduled time, or channel message.</p>
-        <p>A workflow without a clear trigger is not ready to automate.</p>
-
-        <h3>Input</h3>
-        <p>Inputs are the information the system needs to do the work. Examples include customer name, email address, order number, uploaded document, meeting transcript, invoice amount, ticket description, campaign data, lead source, and due date.</p>
-        <p>Inputs must be available, reliable, and usable.</p>
-        <p>If someone has to manually fix the input every time, the automation may fail before it starts.</p>
-
-        <h3>Data Must Be Structured</h3>
-        <p>Automation does not only need information.</p>
-        <p>It needs information organized in a way the system can recognize, use, and pass forward.</p>
-        <p>Humans can understand messy information because we infer context.</p>
-        <p>A human can read this:</p>
-        <pre>Hi, this is Maria. Please call me tomorrow afternoon about my invoice. My number is in my signature.</pre>
-        <p>A human can infer:</p>
-        <pre>Name: Maria
-Request: Call back
-Topic: Invoice
-Preferred time: Tomorrow afternoon
-Phone number: In the email signature</pre>
-        <p>But an automation system works better when the information is already structured:</p>
-        <pre>Name: Maria
-Request type: Callback
-Topic: Invoice
-Preferred date: 2026-05-22
-Preferred time: Afternoon
-Phone number: 555-123-4567</pre>
-        <p>In automation, this is often called the shape of the data.</p>
-        <p>Data shape means the system knows:</p>
-        <ul>
-          <li>What each field is called</li>
-          <li>What type of value is expected</li>
-          <li>Which fields are required</li>
-          <li>What format each field should follow</li>
-          <li>Where the information comes from</li>
-          <li>Where the information should go next</li>
-        </ul>
-        <table>
-          <thead><tr><th>Question</th><th>Example</th></tr></thead>
-          <tbody>
-            <tr><td>What is the field called?</td><td>Customer Name</td></tr>
-            <tr><td>What type of value is expected?</td><td>Text, number, date, email, file, yes/no</td></tr>
-            <tr><td>Is it required or optional?</td><td>Email address is required</td></tr>
-            <tr><td>What format should it follow?</td><td>Date as YYYY-MM-DD</td></tr>
-            <tr><td>Where does it come from?</td><td>Form, email, spreadsheet, CRM</td></tr>
-            <tr><td>Where does it go next?</td><td>CRM record, task, email draft, report</td></tr>
-          </tbody>
-        </table>
-        <p>Without structure, the workflow becomes fragile.</p>
-        <p>This is information:</p>
-        <pre>Customer sent details by email.</pre>
-        <p>But this is automation-ready information:</p>
-        <pre>Customer name:
-Email address:
-Issue type:
-Order number:
-Urgency level:
-Requested action:
-Attachments:</pre>
-        <p>AI can help shape messy data.</p>
-        <p>For example, AI can read an email and extract:</p>
-        <pre>Name:
-Issue:
-Urgency:
-Missing information:
-Recommended category:</pre>
-        <p>But that still requires rules.</p>
-        <ul>
-          <li>What fields AI should extract</li>
-          <li>What happens if AI is uncertain</li>
-          <li>What happens if a required field is missing</li>
-          <li>What happens if the message contains risk</li>
-          <li>Whether a human needs to review the extraction</li>
-        </ul>
-        <blockquote>The information may exist, but if the system cannot identify it, format it, and pass it forward reliably, it is not automation-ready yet.</blockquote>
-
-        <h3>Logic</h3>
-        <p>Logic is the decision-making layer. It answers what should happen under different conditions, what counts as urgent, what category something belongs to, what rule determines the next step, and when a human should review it.</p>
-        <p>Logic is where many weak automations break. People often describe the action but forget the rules.</p>
-        <p>The tool needs rules. AI also needs rules.</p>
-        <p>Not all decisions belong to the automation.</p>
-        <pre>Rule-based: If the invoice amount is below $500, route it to the department manager.
-Pattern-based: Classify the message as billing, support, complaint, refund, or urgent.
-Judgment-based: Decide whether to refund, escalate, approve, terminate, publish, or reject.</pre>
-        <p>Rule-based decisions can often be automated. Pattern-based decisions may use AI, usually with review rules. Judgment-based decisions usually need a human checkpoint.</p>
-        <p>A strong system does not pretend all decisions are the same.</p>
-
-        <h3>Action</h3>
-        <p>Actions are the steps the system performs, such as creating a task, sending an email, updating a spreadsheet, saving a file, creating a CRM record, generating a draft, notifying a team member, adding a tag, moving a document, or creating a summary.</p>
-        <p>Actions are not the whole system. They are only what the system does after the trigger, input, and logic are clear.</p>
-
-        <h3>Output</h3>
-        <p>The output is the result the system produces, such as a completed tracker row, draft email, summarized report, routed ticket, notification, saved file, task with owner and deadline, customer status update, or campaign summary.</p>
-        <p>The output must be defined before building. If the output is vague, the automation will produce inconsistent results.</p>
-
-        <h3>Review</h3>
-        <p>Review is where human judgment enters deliberately. A manager may approve before sending, an attorney may review before client communication, a marketing lead may approve before publishing, finance may approve before payment, HR may review before candidate rejection, or an operator may check exceptions before escalation.</p>
-        <p>Review is not failure.</p>
-        <p>Unplanned review is usually a sign that the system was not fully designed.</p>
-        <p>A strong system defines where humans belong.</p>
+        <p>Click each part below.</p>
+        <div class="system-flow" id="flowCards">
+          <button class="flow-card active" data-title="Trigger" data-detail="The trigger is what starts the workflow. Examples: form submitted, email arrives, file uploaded, payment received, row added, CRM status changed, scheduled time arrives."><strong>Trigger</strong><span>What starts it?</span></button>
+          <button class="flow-card" data-title="Input" data-detail="Inputs are the information the system needs to do the work. Examples: customer name, email address, document, transcript, invoice amount, ticket description, lead source, due date."><strong>Input</strong><span>What information is needed?</span></button>
+          <button class="flow-card" data-title="Logic" data-detail="Logic is the decision layer. It defines rules, categories, conditions, escalation points, and what should happen when information is missing or risky."><strong>Logic</strong><span>What rules apply?</span></button>
+          <button class="flow-card" data-title="Action" data-detail="Actions are what the system performs after the trigger, input, and logic are clear: create a task, send an email, update a record, save a file, generate a draft, notify a person."><strong>Action</strong><span>What should it do?</span></button>
+          <button class="flow-card" data-title="Output" data-detail="The output is the result the system produces: a draft email, routed ticket, updated tracker, saved report, notification, task, or status update."><strong>Output</strong><span>What is produced?</span></button>
+          <button class="flow-card" data-title="Review" data-detail="Review is where human judgment enters deliberately. A strong system defines where humans approve, correct, decide, or handle exceptions."><strong>Review</strong><span>Where do humans belong?</span></button>
+        </div>
+        <div class="flow-detail" id="flowDetail">
+          <h3>Trigger</h3>
+          <p>The trigger is what starts the workflow. Examples: form submitted, email arrives, file uploaded, payment received, row added, CRM status changed, scheduled time arrives.</p>
+        </div>
       </section>
 
-      <section id="happy-path">
-        <h2>4. The First Rule: Do Not Map the Happy Path Only</h2>
-        <p>Most beginners map the perfect version of the process. That is the happy path.</p>
+      <section id="data-structure" class="interactive-panel">
+        <span class="panel-label">Try it</span>
+        <h2>4. Data must be structured</h2>
+        <p>Automation does not only need information. It needs information organized in a way the system can recognize, use, and pass forward.</p>
+        <div class="two-panel">
+          <div class="compare-box">
+            <h3>Messy information</h3>
+            <p>Hi, this is Maria. Please call me tomorrow afternoon about my invoice. My number is in my signature.</p>
+          </div>
+          <div class="compare-box usable">
+            <h3>Structured information</h3>
+            <p><strong>Name:</strong> Maria<br />
+            <strong>Request type:</strong> Callback<br />
+            <strong>Topic:</strong> Invoice<br />
+            <strong>Preferred date:</strong> 2026-05-22<br />
+            <strong>Preferred time:</strong> Afternoon<br />
+            <strong>Phone number:</strong> 555-123-4567</p>
+          </div>
+        </div>
+        <div class="button-row">
+          <button class="button small" id="revealData">Show what the system needs</button>
+        </div>
+        <div class="reveal-box notice" id="dataReveal">
+          <p><strong>Data shape</strong> means the system knows what each field is called, what type of value is expected, which fields are required, what format each field should follow, where the information comes from, and where it should go next.</p>
+          <table>
+            <thead><tr><th>Question</th><th>Example</th></tr></thead>
+            <tbody>
+              <tr><td>What is the field called?</td><td>Customer Name</td></tr>
+              <tr><td>What type of value is expected?</td><td>Text, number, date, email, file, yes/no</td></tr>
+              <tr><td>Is it required or optional?</td><td>Email address is required</td></tr>
+              <tr><td>What format should it follow?</td><td>Date as YYYY-MM-DD</td></tr>
+              <tr><td>Where does it come from?</td><td>Form, email, spreadsheet, CRM</td></tr>
+              <tr><td>Where does it go next?</td><td>CRM record, task, email draft, report</td></tr>
+            </tbody>
+          </table>
+          <blockquote>The information may exist, but if the system cannot identify it, format it, and pass it forward reliably, it is not automation-ready yet.</blockquote>
+        </div>
+      </section>
+
+      <section id="logic-ownership" class="interactive-panel">
+        <span class="panel-label">Mini activity</span>
+        <h2>5. Not all decisions belong to automation</h2>
+        <p>Logic is where many weak automations break. People often describe the action but forget the rules. AI also needs rules.</p>
+        <p>Classify each decision type.</p>
+        <div class="quiz-grid" id="decisionQuiz">
+          <div class="quiz-card" data-answer="rule"><strong>Route invoice under $500 to manager.</strong><select><option value="">Choose</option><option value="rule">Rule-based</option><option value="pattern">Pattern-based</option><option value="human">Human judgment</option></select></div>
+          <div class="quiz-card" data-answer="pattern"><strong>Classify a message as billing, support, complaint, refund, or urgent.</strong><select><option value="">Choose</option><option value="rule">Rule-based</option><option value="pattern">Pattern-based</option><option value="human">Human judgment</option></select></div>
+          <div class="quiz-card" data-answer="human"><strong>Decide whether to approve a refund or concession.</strong><select><option value="">Choose</option><option value="rule">Rule-based</option><option value="pattern">Pattern-based</option><option value="human">Human judgment</option></select></div>
+          <div class="quiz-card" data-answer="human"><strong>Publish a sensitive public statement.</strong><select><option value="">Choose</option><option value="rule">Rule-based</option><option value="pattern">Pattern-based</option><option value="human">Human judgment</option></select></div>
+        </div>
+        <div class="button-row"><button class="button small" id="checkQuiz">Check answers</button></div>
+        <p class="mini-score" id="quizResult"></p>
+        <p>Rule-based decisions can often be automated. Pattern-based decisions may use AI, usually with review rules. Judgment-based decisions usually need a human checkpoint.</p>
+      </section>
+
+      <section id="paths" class="interactive-panel">
+        <span class="panel-label">Design rule</span>
+        <h2>6. Do not map the happy path only</h2>
+        <p>Most beginners map the perfect version of the process:</p>
         <pre>Lead submits form -> AI summarizes lead -> CRM updates -> sales team receives notification</pre>
-        <p>That may be correct, but it is incomplete.</p>
-        <p>Real systems need to handle imperfect situations.</p>
-        <ul>
-          <li>What if the form is incomplete?</li>
-          <li>What if the email address is invalid?</li>
-          <li>What if the lead is from an unsupported location?</li>
-          <li>What if the same lead already exists in the CRM?</li>
-          <li>What if the AI summary is uncertain?</li>
-          <li>What if the source data conflicts?</li>
-          <li>What if the sales owner is missing?</li>
-        </ul>
-        <p>A system that only works when everything is perfect is not a reliable business system. It is closer to a demo than an operating workflow.</p>
+        <p>That may be correct, but it is incomplete. Real systems also need exception paths.</p>
+        <div class="two-panel">
+          <div class="compare-box">
+            <h3>Standard path</h3>
+            <p>A complete lead form is submitted. The system logs the lead, categorizes it, sends confirmation, and notifies the sales owner.</p>
+          </div>
+          <div class="compare-box usable">
+            <h3>Exception path</h3>
+            <p>If required fields are missing, flag for manual review. If email is invalid, do not send confirmation. If lead is duplicate, update the existing record.</p>
+          </div>
+        </div>
         <p>A usable business automation should include the common exception paths.</p>
       </section>
 
-      <section id="paths">
-        <h2>5. Standard Path vs Exception Path</h2>
-        <p>Every workflow has at least two layers:</p>
-        <pre>Standard path = what usually happens
-Exception path = what happens when the usual path breaks</pre>
-        <h3>Standard path</h3>
-        <p>The standard path is the normal route.</p>
-        <pre>A complete lead form is submitted.
-The system logs the lead.
-The system scores or categorizes the lead.
-The system sends a confirmation email.
-The system notifies the sales owner.</pre>
-        <h3>Exception path</h3>
-        <p>The exception path handles anything outside the normal route.</p>
-        <pre>If required fields are missing -> flag for manual review.
-If email is invalid -> do not send confirmation.
-If lead is duplicate -> update existing record instead of creating a new one.
-If lead is high risk or high value -> escalate to a human.</pre>
-        <p>This is where system design becomes practical. You do not need to predict every possible problem, but you must identify the common ones.</p>
-      </section>
-
-      <section id="ai-logic">
-        <h2>6. AI Does Not Remove Logic</h2>
-        <p>AI can summarize, classify, extract, draft, compare, and suggest. But AI does not remove the need for system logic.</p>
+      <section class="interactive-panel">
+        <span class="panel-label">AI control</span>
+        <h2>7. AI does not remove logic</h2>
         <p>Weak instruction:</p>
         <pre>Use AI to answer customer emails.</pre>
         <p>Better system logic:</p>
@@ -283,13 +209,11 @@ If support -> create ticket and draft troubleshooting response.
 If complaint -> summarize issue and route to manager.
 If refund -> check refund policy and route for approval.
 If urgent -> notify team immediately and do not auto-send.</pre>
-        <p>The AI is only one worker inside the system.</p>
         <p>Do not map the workflow as:</p>
         <pre>Email -> AI -> response</pre>
         <p>Map it as:</p>
         <pre>Email -> classify -> check rules -> draft -> route -> review -> send or escalate</pre>
-        <p>The system still needs rules, boundaries, and review points.</p>
-        <p>If the workflow uses AI to interpret, classify, or draft, the system also needs confidence and risk rules.</p>
+        <p>If the workflow uses AI to interpret, classify, or draft, the system needs confidence and risk rules.</p>
         <ul>
           <li>If AI is uncertain, route to a human.</li>
           <li>If required facts are missing, stop and request clarification.</li>
@@ -297,414 +221,311 @@ If urgent -> notify team immediately and do not auto-send.</pre>
           <li>If data conflicts, stop and flag the conflict.</li>
           <li>If the customer is angry, threatening legal action, or reporting harm, escalate.</li>
         </ul>
-        <p>AI can help the workflow move faster. <strong>It should not quietly remove control.</strong></p>
       </section>
 
-      <section id="template">
-        <h2>7. The System Map Template</h2>
-        <p>Use this before building any automation.</p>
-        <pre>Workflow name:
-
-Business goal:
-
-Trigger:
-
-Inputs needed:
-
-Input sources:
-
-Standard process steps:
-
-Rules / logic:
-
-Actions:
-
-Output:
-
-Where output goes:
-
-Human review point:
-
-Exceptions:
-
-Failure handling:
-
-Success measure:</pre>
-        <h3>What each field means</h3>
-        <table>
-          <thead><tr><th>Field</th><th>Meaning</th></tr></thead>
-          <tbody>
-            <tr><td>Workflow name</td><td>The process you are mapping</td></tr>
-            <tr><td>Business goal</td><td>Why this workflow matters</td></tr>
-            <tr><td>Trigger</td><td>What starts the workflow</td></tr>
-            <tr><td>Inputs needed</td><td>Information required to run it</td></tr>
-            <tr><td>Input sources</td><td>Where the information comes from</td></tr>
-            <tr><td>Standard process steps</td><td>What usually happens</td></tr>
-            <tr><td>Rules / logic</td><td>Conditions and decisions</td></tr>
-            <tr><td>Actions</td><td>What the system does</td></tr>
-            <tr><td>Output</td><td>What the system produces</td></tr>
-            <tr><td>Where output goes</td><td>Destination of the result</td></tr>
-            <tr><td>Human review point</td><td>Where people must check, approve, or decide</td></tr>
-            <tr><td>Exceptions</td><td>Known cases that do not follow the standard path</td></tr>
-            <tr><td>Failure handling</td><td>What happens when the system cannot continue</td></tr>
-            <tr><td>Success measure</td><td>How you know the system worked</td></tr>
-          </tbody>
-        </table>
+      <section id="examples" class="interactive-panel">
+        <span class="panel-label">Examples</span>
+        <h2>8. See the same framework across use cases</h2>
+        <div class="tabs" role="tablist" aria-label="System map examples">
+          <button class="tab-btn active" data-tab="marketing">Marketing</button>
+          <button class="tab-btn" data-tab="support">Customer Support</button>
+          <button class="tab-btn" data-tab="ops">Operations/Admin</button>
+        </div>
+        <div class="tab-panel active" id="tab-marketing">
+          <h3>Marketing Content Repurposing</h3>
+          <p><strong>Task version:</strong> Turn a blog post into LinkedIn posts.</p>
+          <pre>Workflow name: Blog-to-LinkedIn content repurposing
+Business goal: Increase content output without starting every post from scratch.
+Trigger: A new approved blog post is added to the content folder.
+Inputs needed: Blog title, article text, target audience, campaign theme, brand voice rules, CTA, link.
+Input sources: Google Docs, content calendar, brand guide, campaign tracker.
+Rules / logic: Do not publish automatically. Avoid unsupported claims. Preserve original meaning. Use approved CTA only.
+Output: Three LinkedIn draft posts.
+Human review point: Marketing lead approves or edits before publishing.
+Exceptions: Article is incomplete, missing CTA, off-brand, or contains high-risk claims.</pre>
+        </div>
+        <div class="tab-panel" id="tab-support">
+          <h3>Customer Support Ticket Triage</h3>
+          <p><strong>Task version:</strong> Route support tickets.</p>
+          <pre>Workflow name: Support ticket triage
+Business goal: Reduce response delay and make sure urgent issues are seen first.
+Trigger: A new support ticket is submitted.
+Inputs needed: Customer name, account ID, issue description, product, urgency indicators, attachments, prior ticket history.
+Input sources: Support form, helpdesk, CRM, customer database.
+Rules / logic: Billing goes to billing support. Technical goes to technical support. Refunds require approval. Account access issues are urgent.
+Output: Classified and routed ticket with summary.
+Human review point: Support lead reviews urgent, refund, legal, or account-risk tickets.
+Exceptions: Missing account ID, unclear issue, duplicate ticket, angry customer, legal threat.</pre>
+        </div>
+        <div class="tab-panel" id="tab-ops">
+          <h3>Weekly Status Report Consolidation</h3>
+          <p><strong>Task version:</strong> Prepare the weekly status report.</p>
+          <pre>Workflow name: Weekly status report consolidation
+Business goal: Reduce manual collection of scattered updates and give leadership a clearer view of progress, risks, and pending decisions.
+Trigger: Every Friday at 3 PM, or when all required team updates are submitted.
+Inputs needed: Team updates, project status, completed tasks, blockers, overdue items, metrics, decisions needed, owner names, deadlines.
+Input sources: Project tracker, team update form, email updates, task board, shared documents.
+Rules / logic: Missing updates are flagged, not guessed. Risks and blockers are placed near the top. Conflicting updates are not merged without review.
+Output: Draft weekly status report with progress, blockers, risks, overdue items, and decisions needed.
+Human review point: Operations lead reviews before sending to leadership.
+Exceptions: Missing updates, conflicting information, unclear ownership, outdated tracker data, urgent issue requiring separate escalation.</pre>
+        </div>
       </section>
 
-      <section id="examples">
-        <h2>Examples</h2>
-        <h3>Example 1: Marketing Content Repurposing</h3>
-        <p>Task version:</p>
-        <pre>Turn a blog post into LinkedIn posts.</pre>
-        <p>That is not enough to build from.</p>
-        <pre>Workflow name:
-Blog-to-LinkedIn content repurposing
-
-Business goal:
-Increase content output without starting every post from scratch.
-
-Trigger:
-A new approved blog post is added to the content folder.
-
-Inputs needed:
-Blog title, article text, target audience, campaign theme, brand voice rules, CTA, link.
-
-Input sources:
-Google Docs, content calendar, brand guide, campaign tracker.
-
-Standard process steps:
-1. Detect new approved article.
-2. Extract core ideas.
-3. Generate three LinkedIn draft angles.
-4. Create one short post, one practical tip post, and one opinion post.
-5. Add CTA and link.
-6. Save drafts for review.
-7. Notify marketing lead.
-
-Rules / logic:
-Do not publish automatically.
-Avoid unsupported claims.
-Preserve original meaning.
-Use approved CTA only.
-Flag posts that mention legal, financial, medical, or regulatory claims.
-
-Actions:
-Generate drafts, save to content tracker, notify reviewer.
-
-Output:
-Three LinkedIn draft posts.
-
-Where output goes:
-Content tracker and draft folder.
-
-Human review point:
-Marketing lead approves or edits before publishing.
-
-Exceptions:
-Article is incomplete, missing CTA, off-brand, or contains high-risk claims.
-
-Failure handling:
-Flag for review and do not generate final draft.
-
-Success measure:
-Draft creation time is reduced while maintaining review quality.</pre>
-
-        <h3>Example 2: Customer Support Ticket Triage</h3>
-        <p>Task version:</p>
-        <pre>Route support tickets.</pre>
-        <p>Too vague.</p>
-        <pre>Workflow name:
-Support ticket triage
-
-Business goal:
-Reduce response delay and make sure urgent issues are seen first.
-
-Trigger:
-A new support ticket is submitted.
-
-Inputs needed:
-Customer name, account ID, issue description, product, urgency indicators, attachments, prior ticket history.
-
-Input sources:
-Support form, helpdesk, CRM, customer database.
-
-Standard process steps:
-1. Detect new ticket.
-2. Check required fields.
-3. Classify issue type.
-4. Assign urgency level.
-5. Route to correct support queue.
-6. Draft internal summary.
-7. Notify owner.
-
-Rules / logic:
-Billing issues go to billing support.
-Technical issues go to technical support.
-Refund requests require approval.
-Security or account access issues are urgent.
-Incomplete tickets are routed for clarification.
-
-Actions:
-Tag ticket, assign queue, generate summary, notify owner.
-
-Output:
-Classified and routed ticket with summary.
-
-Where output goes:
-Helpdesk queue and team notification channel.
-
-Human review point:
-Support lead reviews urgent, refund, legal, or account-risk tickets.
-
-Exceptions:
-Missing account ID, unclear issue, duplicate ticket, angry customer, legal threat.
-
-Failure handling:
-Send to manual triage queue.
-
-Success measure:
-Faster first response, fewer misrouted tickets, clearer escalation.</pre>
-        <p>This is system thinking. The automation is not just “AI reads ticket.” The automation is a workflow with rules.</p>
-
-        <h3>Example 3: Weekly Status Report Consolidation</h3>
-        <p>Task version:</p>
-        <pre>Prepare the weekly status report.</pre>
-        <p>That sounds simple, but the system needs more detail.</p>
-        <pre>Workflow name:
-Weekly status report consolidation
-
-Business goal:
-Reduce manual collection of scattered updates and give leadership a clearer view of progress, risks, and pending decisions.
-
-Trigger:
-Every Friday at 3 PM, or when all required team updates are submitted.
-
-Inputs needed:
-Team updates, project status, completed tasks, blockers, overdue items, metrics, decisions needed, owner names, deadlines.
-
-Input sources:
-Project tracker, team update form, email updates, task board, shared documents.
-
-Standard process steps:
-1. Collect updates from approved sources.
-2. Check whether required updates are complete.
-3. Group updates by project, owner, or business area.
-4. Identify blockers, overdue items, risks, and decisions needed.
-5. Draft a concise leadership summary.
-6. Save the draft report.
-7. Notify the reviewer.
-
-Rules / logic:
-Missing updates are flagged, not guessed.
-Overdue items are separated from completed items.
-Risks and blockers are placed near the top.
-Items needing leadership decisions are clearly labeled.
-Conflicting updates are not merged without review.
-
-Actions:
-Collect updates, organize content, draft report, flag missing items, notify reviewer.
-
-Output:
-Draft weekly status report with sections for progress, blockers, risks, overdue items, and decisions needed.
-
-Where output goes:
-Shared report folder, leadership email draft, or internal update channel.
-
-Human review point:
-Operations lead reviews before sending to leadership.
-
-Exceptions:
-Missing team updates, conflicting information, unclear ownership, outdated tracker data, urgent issue requiring separate escalation.
-
-Failure handling:
-Generate a partial draft with missing items clearly flagged and notify the responsible owner.
-
-Success measure:
-Less time spent collecting updates, clearer leadership visibility, fewer missed blockers, and faster follow-up on pending decisions.</pre>
-        <p>This example matters because many useful automations are internal. Some of the highest-value systems are the quiet operational workflows that keep work visible and moving.</p>
+      <section id="map-builder" class="interactive-panel">
+        <span class="panel-label">Activity 01.1</span>
+        <h2>9. System Map Builder</h2>
+        <p>Choose one task that passed Module 00’s Three-Gate Decision Framework. Convert it into a system map. Your work is saved in this browser.</p>
+        <div class="builder-grid" id="builderFields">
+          <div class="field-block"><label for="task">Task version</label><textarea id="task" placeholder="Example: Prepare the weekly status report."></textarea></div>
+          <div class="field-block"><label for="workflow">Workflow name</label><textarea id="workflow"></textarea></div>
+          <div class="field-block"><label for="goal">Business goal</label><textarea id="goal"></textarea></div>
+          <div class="field-block"><label for="trigger">Trigger</label><textarea id="trigger"></textarea></div>
+          <div class="field-block"><label for="inputs">Inputs needed</label><textarea id="inputs"></textarea></div>
+          <div class="field-block"><label for="sources">Input sources</label><textarea id="sources"></textarea></div>
+          <div class="field-block wide"><label for="steps">Standard process steps</label><textarea id="steps"></textarea></div>
+          <div class="field-block wide"><label for="rules">Rules / logic</label><textarea id="rules"></textarea></div>
+          <div class="field-block"><label for="actions">Actions</label><textarea id="actions"></textarea></div>
+          <div class="field-block"><label for="output">Output</label><textarea id="output"></textarea></div>
+          <div class="field-block"><label for="destination">Where output goes</label><textarea id="destination"></textarea></div>
+          <div class="field-block"><label for="review">Human review point</label><textarea id="review"></textarea></div>
+          <div class="field-block"><label for="exceptions">Exceptions</label><textarea id="exceptions"></textarea></div>
+          <div class="field-block"><label for="failure">Failure handling</label><textarea id="failure"></textarea></div>
+          <div class="field-block wide"><label for="success">Success measure</label><textarea id="success"></textarea></div>
+        </div>
+        <div class="button-row">
+          <button class="button primary" id="compileMap">Generate map</button>
+          <button class="button" id="copyMap">Copy map</button>
+          <button class="button" id="downloadMap">Download .txt</button>
+          <button class="button" id="clearMap">Clear</button>
+        </div>
+        <h3>Your system map</h3>
+        <div class="output-box" id="mapOutput">Your generated system map will appear here.</div>
       </section>
 
-      <section id="activity-1">
-        <h2>Activity 01.1: Convert a Task Into a System</h2>
-        <p>Choose one task that passed Module 00’s Three-Gate Decision Framework.</p>
-        <p>Write the task version first.</p>
-        <pre>Task version:</pre>
-        <p>Now convert it into a system map.</p>
-        <pre>Workflow name:
-
-Business goal:
-
-Trigger:
-
-Inputs needed:
-
-Input sources:
-
-Standard process steps:
-
-Rules / logic:
-
-Actions:
-
-Output:
-
-Where output goes:
-
-Human review point:
-
-Exceptions:
-
-Failure handling:
-
-Success measure:</pre>
-        <p>Do not make it perfect. Make it visible.</p>
-        <p><strong>You cannot improve a workflow you cannot see.</strong></p>
-      </section>
-
-      <section id="build-ready">
-        <h2>12. The Build-Ready Check</h2>
-        <p>After mapping the system, test whether it is ready to build.</p>
-        <p>This may feel similar to Gate 2 from Module 00. That reaction is correct.</p>
-        <p>There is overlap because both deal with process clarity. The difference is the level of detail.</p>
-        <p>Gate 2 asks whether the process is clear and repeatable enough to be considered for automation.</p>
-        <p>The Build-Ready Check asks whether the process has been mapped with enough detail that someone could actually build the workflow.</p>
+      <section id="build-ready" class="interactive-panel">
+        <span class="panel-label">Activity 01.2</span>
+        <h2>10. Build-Ready Check</h2>
+        <p>This may feel similar to Gate 2 from Module 00. That reaction is correct. Gate 2 asks whether the process is structured enough to automate. The Build-Ready Check asks whether the workflow is specific enough to build.</p>
         <pre>Gate 2 = Is this process structured enough to automate?
 Build-Ready Check = Is the workflow specific enough to build?</pre>
-        <p>A process can pass Gate 2 and still fail the Build-Ready Check.</p>
-        <p>A weekly report may be a valid automation candidate. It happens repeatedly, the general process is known, the output is useful, and human review is manageable. That means it may pass Gate 2.</p>
-        <p>But it is still not build-ready if the exact trigger, source records, required fields, input formats, inclusion rules, missing-information handling, output format, destination, review owner, and success/failure rules are unclear.</p>
-        <h3>Trigger</h3>
-        <pre>Can I name the exact event that starts the workflow?
-Can I identify where that event happens?</pre>
-        <h3>Inputs</h3>
-        <pre>Can I list the exact data points or fields required?
-Do I know the format of each input?
-Do I know where each input comes from?</pre>
-        <h3>Logic</h3>
-        <pre>Can I describe the standard path step by step?
-Can I write the logic as if / then / else rules?
-Can I identify which steps are automatic, manual, or review-only?</pre>
-        <h3>Actions</h3>
-        <pre>Do I know what action should happen at each step?</pre>
-        <h3>Output</h3>
-        <pre>Is the output clearly defined?
-Do I know where each output should be sent, saved, or updated?</pre>
-        <h3>Review</h3>
-        <pre>Have I defined where the workflow stops for human review?</pre>
-        <h3>Exceptions and failure handling</h3>
-        <pre>Have I identified common exceptions?
-Do I know what happens when information is missing, duplicated, invalid, unclear, or risky?</pre>
-        <h3>Success and failure</h3>
-        <pre>Do I know what counts as a successful run?
-Do I know what counts as a failed or incomplete run?</pre>
-        <p>If you cannot answer these, do not build yet.</p>
-        <p>The right next step is not opening an automation platform. The right next step is clearer workflow design.</p>
-        <p>The gates decide whether the automation idea is valid. The Build-Ready Check decides whether the mapped workflow is ready to be built.</p>
-      </section>
-
-      <section id="activity-2">
-        <h2>Activity 01.2: Diagnose the Build Gaps</h2>
-        <p>Review your system map and mark each item based on whether it is specific enough for someone to build from:</p>
-        <pre>Clear / unclear / missing</pre>
-        <table>
-          <thead><tr><th>System part</th><th>Status</th><th>What needs to be clarified?</th></tr></thead>
-          <tbody>
-            <tr><td>Trigger</td><td></td><td></td></tr>
-            <tr><td>Inputs</td><td></td><td></td></tr>
-            <tr><td>Input sources</td><td></td><td></td></tr>
-            <tr><td>Standard steps</td><td></td><td></td></tr>
-            <tr><td>Logic / rules</td><td></td><td></td></tr>
-            <tr><td>Actions</td><td></td><td></td></tr>
-            <tr><td>Output</td><td></td><td></td></tr>
-            <tr><td>Destination</td><td></td><td></td></tr>
-            <tr><td>Human review</td><td></td><td></td></tr>
-            <tr><td>Exceptions</td><td></td><td></td></tr>
-            <tr><td>Failure handling</td><td></td><td></td></tr>
-            <tr><td>Success measure</td><td></td><td></td></tr>
-          </tbody>
-        </table>
-        <p>If too many items are unclear or missing, the process may still be a valid automation candidate, but it is not build-ready yet. That is not a failure. That is useful information.</p>
+        <p>Mark each area. The score is not a grade. It tells you what to clarify before building.</p>
+        <div class="checklist" id="readinessCheck">
+          <div class="check-row"><strong>Trigger</strong><select><option value="0">Missing</option><option value="1">Unclear</option><option value="2">Clear</option></select><span>Can you name the exact event that starts the workflow?</span></div>
+          <div class="check-row"><strong>Inputs</strong><select><option value="0">Missing</option><option value="1">Unclear</option><option value="2">Clear</option></select><span>Can you list exact data points and required fields?</span></div>
+          <div class="check-row"><strong>Input sources</strong><select><option value="0">Missing</option><option value="1">Unclear</option><option value="2">Clear</option></select><span>Do you know where each input comes from?</span></div>
+          <div class="check-row"><strong>Logic</strong><select><option value="0">Missing</option><option value="1">Unclear</option><option value="2">Clear</option></select><span>Can you write the rules as if / then / else?</span></div>
+          <div class="check-row"><strong>Actions</strong><select><option value="0">Missing</option><option value="1">Unclear</option><option value="2">Clear</option></select><span>Do you know what action happens at each step?</span></div>
+          <div class="check-row"><strong>Output</strong><select><option value="0">Missing</option><option value="1">Unclear</option><option value="2">Clear</option></select><span>Is the output clearly defined?</span></div>
+          <div class="check-row"><strong>Review</strong><select><option value="0">Missing</option><option value="1">Unclear</option><option value="2">Clear</option></select><span>Have you defined where the workflow stops for human review?</span></div>
+          <div class="check-row"><strong>Exceptions</strong><select><option value="0">Missing</option><option value="1">Unclear</option><option value="2">Clear</option></select><span>Do you know what happens when information is missing, duplicated, invalid, unclear, or risky?</span></div>
+          <div class="check-row"><strong>Success/failure</strong><select><option value="0">Missing</option><option value="1">Unclear</option><option value="2">Clear</option></select><span>Do you know what counts as a successful or failed run?</span></div>
+        </div>
+        <div class="button-row"><button class="button primary" id="scoreReadiness">Score readiness</button></div>
+        <div class="result-box" id="readinessResult">Your readiness result will appear here.</div>
       </section>
 
       <section id="mistakes">
-        <h2>14. System Thinking Mistakes to Avoid</h2>
-        <h3>Mistake 1: Letting the tool lead the design</h3>
-        <p>It is not wrong to ask how something can be built in a workflow automation platform. That question can be useful once the workflow is already clear.</p>
-        <p>The mistake is asking the tool question before the system question.</p>
-        <pre>Weak first question: How do I build this in a workflow automation platform?
+        <h2>11. System Thinking Mistakes to Avoid</h2>
+        <details class="learning-detail">
+          <summary>Mistake 1: Letting the tool lead the design</summary>
+          <div>
+            <p>It is not wrong to ask how something can be built in a workflow automation platform. The mistake is asking the tool question before the system question.</p>
+            <pre>Weak first question: How do I build this in a workflow automation platform?
 Better first question: What exactly should the system do from trigger to output?
 Better tool question: Now that the workflow is mapped, which tool can build it best?</pre>
-        <p>Tools execute logic. They do not replace it.</p>
-
-        <h3>Mistake 2: Confusing output with outcome</h3>
-        <p>Output is what the system produces. Outcome is the business improvement you want.</p>
-        <table>
-          <thead><tr><th>Output</th><th>Outcome</th></tr></thead>
-          <tbody>
-            <tr><td>Draft email</td><td>Faster response time</td></tr>
-            <tr><td>Updated tracker</td><td>Better visibility</td></tr>
-            <tr><td>Ticket summary</td><td>Faster triage</td></tr>
-            <tr><td>Saved invoice record</td><td>Easier approval tracking</td></tr>
-            <tr><td>LinkedIn post draft</td><td>More consistent content production</td></tr>
-          </tbody>
-        </table>
-        <p>You need both.</p>
-
-        <h3>Mistake 3: Ignoring bad inputs</h3>
-        <p>Bad input creates bad automation. If the form is unclear, the email is unstructured, the spreadsheet is messy, or the source data is unreliable, automation will magnify the issue. Fix the input layer before blaming the tool.</p>
-
-        <h3>Mistake 4: Treating AI output as final by default</h3>
-        <p>AI-generated output should be reviewed when the work involves judgment, risk, brand voice, client communication, legal issues, financial decisions, healthcare, HR, or anything that can cause harm if wrong.</p>
-        <p>Automation can prepare. Humans still decide where risk requires it.</p>
-
-        <h3>Mistake 5: Forgetting failure handling</h3>
-        <p>A system needs a plan for what happens when it cannot continue, such as missing information, invalid format, duplicate record, AI uncertainty, tool connection failure, conflicting data, or no assigned owner.</p>
-        <p>Failure handling is part of system design. Not an afterthought.</p>
+          </div>
+        </details>
+        <details class="learning-detail">
+          <summary>Mistake 2: Confusing output with outcome</summary>
+          <div>
+            <p>Output is what the system produces. Outcome is the business improvement you want.</p>
+            <table>
+              <thead><tr><th>Output</th><th>Outcome</th></tr></thead>
+              <tbody>
+                <tr><td>Draft email</td><td>Faster response time</td></tr>
+                <tr><td>Updated tracker</td><td>Better visibility</td></tr>
+                <tr><td>Ticket summary</td><td>Faster triage</td></tr>
+                <tr><td>Saved invoice record</td><td>Easier approval tracking</td></tr>
+                <tr><td>LinkedIn post draft</td><td>More consistent content production</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details class="learning-detail">
+          <summary>Mistake 3: Ignoring bad inputs</summary>
+          <div><p>Bad input creates bad automation. If the form is unclear, the email is unstructured, the spreadsheet is messy, or the source data is unreliable, automation will magnify the issue. Fix the input layer before blaming the tool.</p></div>
+        </details>
+        <details class="learning-detail">
+          <summary>Mistake 4: Treating AI output as final by default</summary>
+          <div><p>AI-generated output should be reviewed when the work involves judgment, risk, brand voice, client communication, legal issues, financial decisions, healthcare, HR, or anything that can cause harm if wrong.</p></div>
+        </details>
+        <details class="learning-detail">
+          <summary>Mistake 5: Forgetting failure handling</summary>
+          <div><p>A system needs a plan for what happens when it cannot continue: missing information, invalid format, duplicate record, AI uncertainty, tool connection failure, conflicting data, or no assigned owner.</p></div>
+        </details>
       </section>
 
-      <section id="deliverable">
-        <h2>15. Module 01 Deliverable</h2>
+      <section id="deliverable" class="interactive-panel">
+        <span class="panel-label">Deliverable</span>
+        <h2>12. What you produce in this module</h2>
         <p>By the end of this module, you should have one completed system map for a real workflow.</p>
-        <p>Your system map should include workflow name, business goal, trigger, inputs and input sources, data shape requirements, standard path, rules and decision logic, actions, output and destination, human review point, exception paths, failure handling, success measure, and remaining build gaps.</p>
-        <p>This is the working artifact of Module 01.</p>
-        <p>You are not only learning the concept.</p>
+        <ul>
+          <li>Workflow name</li>
+          <li>Business goal</li>
+          <li>Trigger</li>
+          <li>Inputs and input sources</li>
+          <li>Data shape requirements</li>
+          <li>Standard path</li>
+          <li>Rules and decision logic</li>
+          <li>Actions</li>
+          <li>Output and destination</li>
+          <li>Human review point</li>
+          <li>Exception paths</li>
+          <li>Failure handling</li>
+          <li>Success measure</li>
+          <li>Remaining build gaps</li>
+        </ul>
         <p>You are producing the map that a builder, automation platform, or AI assistant can follow.</p>
       </section>
 
-      <section id="completion">
-        <h2>16. Module 01 Completion Check</h2>
-        <p>You are ready to move on when you can explain:</p>
-        <ul>
-          <li>The difference between a task and a system</li>
-          <li>Why automation needs triggers, inputs, logic, actions, outputs, and review</li>
-          <li>Why the happy path is not enough</li>
-          <li>How to identify standard paths and exception paths</li>
-          <li>Why AI does not remove the need for rules</li>
-          <li>How to map a workflow before opening a tool</li>
-          <li>How to test whether a mapped workflow is build-ready</li>
-        </ul>
-        <p>You still do not need to know how to use a workflow automation platform yet.</p>
-        <p>You still do not need to know APIs yet.</p>
-        <p>At this point, the skill is system design. You are learning to make work visible, structured, and buildable.</p>
-      </section>
-
       <section id="next">
-        <h2>17. What Comes Next</h2>
+        <h2>13. What Comes Next</h2>
         <p>Now that you can map a workflow as a system, the next step is to understand how tools pass information to each other.</p>
-        <p>Module 02 introduces the plumbing behind automation:</p>
         <pre>APIs -> Webhooks -> JSON</pre>
-        <p>You do not need to become a developer.</p>
-        <p>But you do need to understand what is being passed, where it goes, and why automation breaks when the structure is wrong.</p>
-        <p>Module 01 gives you the workflow map.</p>
-        <p>Module 02 teaches you how that map moves between tools.</p>
+        <p>You do not need to become a developer. But you do need to understand what is being passed, where it goes, and why automation breaks when the structure is wrong.</p>
+        <p>Module 01 gives you the workflow map. Module 02 teaches you how that map moves between tools.</p>
       </section>
     </article>
   </div>
 </main>
 
 <footer>
-  <p>© JENX.AI. Learning AI Automation: Track 1 - No Code Path.</p>
+  <p>Learning AI Automation: Track 1 - No Code Path.</p>
 </footer>
+
+<script>
+(function () {
+  const flowCards = document.querySelectorAll('.flow-card');
+  const flowDetail = document.getElementById('flowDetail');
+  flowCards.forEach(card => {
+    card.addEventListener('click', () => {
+      flowCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      flowDetail.innerHTML = '<h3>' + card.dataset.title + '</h3><p>' + card.dataset.detail + '</p>';
+    });
+  });
+
+  const revealBtn = document.getElementById('revealData');
+  const revealBox = document.getElementById('dataReveal');
+  if (revealBtn && revealBox) {
+    revealBtn.addEventListener('click', () => {
+      revealBox.classList.toggle('show');
+      revealBtn.textContent = revealBox.classList.contains('show') ? 'Hide details' : 'Show what the system needs';
+    });
+  }
+
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => b.classList.remove('active'));
+      tabPanels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  const quizButton = document.getElementById('checkQuiz');
+  if (quizButton) {
+    quizButton.addEventListener('click', () => {
+      let correct = 0;
+      const cards = document.querySelectorAll('#decisionQuiz .quiz-card');
+      cards.forEach(card => {
+        const select = card.querySelector('select');
+        const ok = select.value === card.dataset.answer;
+        if (ok) correct++;
+        card.style.borderColor = ok ? '#2f9c91' : '#d22';
+        card.style.background = ok ? '#e1f7e8' : '#ffe2e2';
+      });
+      document.getElementById('quizResult').textContent = correct + ' of ' + cards.length + ' correct. Rule-based can often be automated. Pattern-based may use AI. Judgment-based needs human control.';
+    });
+  }
+
+  const fieldIds = ['task','workflow','goal','trigger','inputs','sources','steps','rules','actions','output','destination','review','exceptions','failure','success'];
+  const labels = {
+    task: 'Task version', workflow: 'Workflow name', goal: 'Business goal', trigger: 'Trigger', inputs: 'Inputs needed', sources: 'Input sources', steps: 'Standard process steps', rules: 'Rules / logic', actions: 'Actions', output: 'Output', destination: 'Where output goes', review: 'Human review point', exceptions: 'Exceptions', failure: 'Failure handling', success: 'Success measure'
+  };
+  const saveKey = 'jenx-module01-system-map';
+  function readFields() {
+    const data = {};
+    fieldIds.forEach(id => { const el = document.getElementById(id); data[id] = el ? el.value : ''; });
+    return data;
+  }
+  function writeFields(data) {
+    fieldIds.forEach(id => { const el = document.getElementById(id); if (el && data[id]) el.value = data[id]; });
+  }
+  function buildMapText() {
+    const data = readFields();
+    return fieldIds.map(id => labels[id] + ':\n' + (data[id] || '')).join('\n\n');
+  }
+  function refreshOutput() {
+    const text = buildMapText();
+    document.getElementById('mapOutput').textContent = text;
+    localStorage.setItem(saveKey, JSON.stringify(readFields()));
+    return text;
+  }
+  const saved = localStorage.getItem(saveKey);
+  if (saved) { try { writeFields(JSON.parse(saved)); } catch(e) {} }
+  document.querySelectorAll('#builderFields textarea').forEach(el => el.addEventListener('input', refreshOutput));
+  const compileBtn = document.getElementById('compileMap');
+  if (compileBtn) compileBtn.addEventListener('click', refreshOutput);
+  const copyBtn = document.getElementById('copyMap');
+  if (copyBtn) copyBtn.addEventListener('click', async () => {
+    const text = refreshOutput();
+    try { await navigator.clipboard.writeText(text); copyBtn.textContent = 'Copied'; setTimeout(() => copyBtn.textContent = 'Copy map', 1200); } catch(e) { alert('Copy failed. Select the text manually.'); }
+  });
+  const downloadBtn = document.getElementById('downloadMap');
+  if (downloadBtn) downloadBtn.addEventListener('click', () => {
+    const blob = new Blob([refreshOutput()], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'module-01-system-map.txt';
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+  const clearBtn = document.getElementById('clearMap');
+  if (clearBtn) clearBtn.addEventListener('click', () => {
+    if (!confirm('Clear your system map fields?')) return;
+    fieldIds.forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+    localStorage.removeItem(saveKey);
+    document.getElementById('mapOutput').textContent = 'Your generated system map will appear here.';
+  });
+  if (saved) refreshOutput();
+
+  const scoreButton = document.getElementById('scoreReadiness');
+  if (scoreButton) {
+    scoreButton.addEventListener('click', () => {
+      const selects = document.querySelectorAll('#readinessCheck select');
+      let score = 0, max = selects.length * 2, missing = 0;
+      selects.forEach(s => { const v = Number(s.value); score += v; if (v === 0) missing++; });
+      const pct = Math.round((score / max) * 100);
+      const box = document.getElementById('readinessResult');
+      box.classList.remove('ready','review','not-ready');
+      if (pct >= 85 && missing === 0) {
+        box.classList.add('ready');
+        box.textContent = 'Build-readiness: ' + pct + '%. Ready to start building, with normal testing and review.';
+      } else if (pct >= 55) {
+        box.classList.add('review');
+        box.textContent = 'Build-readiness: ' + pct + '%. Not ready yet. Clarify unclear areas before opening the automation platform.';
+      } else {
+        box.classList.add('not-ready');
+        box.textContent = 'Build-readiness: ' + pct + '%. Stop. The workflow needs clearer process design before it should be built.';
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>
