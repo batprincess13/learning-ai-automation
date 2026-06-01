@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 02 | How Tools Talk</title>
+  <meta name="description" content="Module 02: How Tools Talk. Learn how automation steps exchange information through triggers, fields, APIs, webhooks, JSON, permissions, and run logs." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="learning-shell">
+<header>
+  <div class="header-inner">
+    <a href="index.html"><img class="logo" src="assets/jenx-logo.png" alt="JENX.AI logo" /></a>
+    <nav class="nav">
+      <a href="index.html">Course Home</a>
+      <a href="module-00.html">Module 00</a>
+      <a href="module-01.html">Module 01</a>
+      <a href="#communication-map">Communication Map</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow">Module 02</div>
+    <h1>How Tools Talk</h1>
+    <p class="subtitle"><strong>Course:</strong> Learning AI Automation: Track 1 - No Code Path</p>
+    <p>By the end of this module, you should understand how automation steps exchange information well enough to design cleaner workflows and diagnose common failures.</p>
+    <div class="lesson-map" aria-label="Module learning path">
+      <span class="lesson-step">1. See</span>
+      <span class="lesson-step">2. Structure</span>
+      <span class="lesson-step">3. Pass</span>
+      <span class="lesson-step">4. Inspect</span>
+      <span class="lesson-step">5. Map</span>
+    </div>
+  </section>
+
+  <div class="module-layout">
+    <aside class="sidebar">
+      <strong>Module Sections</strong>
+      <a href="#outcome">Outcome</a>
+      <a href="#why">Why This Matters</a>
+      <a href="#builder-view">What You See</a>
+      <a href="#pattern">Communication Pattern</a>
+      <a href="#mechanics">API, Webhook, JSON</a>
+      <a href="#mapping">Field Mapping</a>
+      <a href="#permissions">Permissions</a>
+      <a href="#failures">Failure Points</a>
+      <a href="#example">Practical Example</a>
+      <a href="#communication-map">Communication Map</a>
+      <a href="#next">What Comes Next</a>
+    </aside>
+
+    <article class="module-content">
+      <section id="outcome">
+        <span class="panel-label">Outcome</span>
+        <h2>What you should be able to do</h2>
+        <p>Module 01 helped you turn a selected process into a buildable workflow map.</p>
+        <p>Module 02 shows what changes when that workflow begins to move inside automation tools.</p>
+        <p>By the end of this module, you should be able to explain:</p>
+        <ul>
+          <li>What information each automation step needs</li>
+          <li>Where that information comes from</li>
+          <li>How information is passed from one step to another</li>
+          <li>Why field structure and format matter</li>
+          <li>What APIs, webhooks, and JSON do at a practical level</li>
+          <li>How permissions affect automation steps</li>
+          <li>Where to check when a workflow breaks</li>
+        </ul>
+        <blockquote>Module 01 answers: What should happen? Module 02 answers: How does each step receive, send, use, and return information when the workflow is built?</blockquote>
+      </section>
+
+      <section id="why" class="interactive-panel">
+        <span class="panel-label">Start here</span>
+        <h2>1. Why this matters when you build</h2>
+        <p>In Module 01, you learned this workflow structure:</p>
+        <pre>Trigger -> Input -> Logic -> Action -> Output -> Review</pre>
+        <p>That map is still correct. But a no-code builder will not ask only, “What should happen?” It will ask you to choose a trigger, connect an account, map fields, choose an action, inspect outputs, and handle errors.</p>
+        <div class="two-panel">
+          <div class="compare-box">
+            <h3>Module 01 view</h3>
+            <p>Inquiry submitted -> classify inquiry -> create lead -> notify sales -> review.</p>
+          </div>
+          <div class="compare-box usable">
+            <h3>Module 02 view</h3>
+            <p>What fields came in? What format are they in? Which step receives them next? Does the CRM require email? What comes back after the record is created?</p>
+          </div>
+        </div>
+        <p>A workflow can look correct on paper and still fail during the build because a required field is missing, the next tool expects a different format, the account does not have permission, or AI returns text the next step cannot use.</p>
+        <blockquote>Good workflow design depends on knowing what each step needs to receive, send, use, and return.</blockquote>
+      </section>
+
+      <section class="interactive-panel">
+        <span class="panel-label">Clarification</span>
+        <h2>2. Automation can happen inside one tool or across tools</h2>
+        <p>Automation does not always mean connecting several platforms.</p>
+        <div class="two-panel">
+          <div class="compare-box">
+            <h3>Inside one tool</h3>
+            <ul>
+              <li>A spreadsheet calculates a status</li>
+              <li>An email rule sorts incoming messages</li>
+              <li>A form routes someone based on an answer</li>
+              <li>A database updates a field when a record changes</li>
+            </ul>
+          </div>
+          <div class="compare-box usable">
+            <h3>Across tools</h3>
+            <ul>
+              <li>A form collects information</li>
+              <li>An AI step summarizes or classifies it</li>
+              <li>A CRM or tracker stores the result</li>
+              <li>An email or notification sends the output</li>
+            </ul>
+          </div>
+        </div>
+        <p>Both are automation. In any automation, something is captured, checked, changed, sent, saved, updated, routed, or prepared for review.</p>
+        <p>The number of tools is not the main issue. The main issue is whether the right information reaches the right step in a usable form.</p>
+      </section>
+
+      <section id="builder-view" class="interactive-panel">
+        <span class="panel-label">Builder View</span>
+        <h2>3. What you will see inside a no-code builder</h2>
+        <p>When you start building, tool communication usually appears through a visual interface. You may not see raw technical code. You will see labels, fields, menus, run results, and errors.</p>
+        <table>
+          <thead><tr><th>What you see</th><th>What it means</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Trigger</strong></td><td>The event that starts the workflow.</td></tr>
+            <tr><td><strong>Connection / connected account</strong></td><td>Permission for one tool or step to access another system.</td></tr>
+            <tr><td><strong>Action</strong></td><td>The thing the next system is being asked to do.</td></tr>
+            <tr><td><strong>Mapped fields</strong></td><td>The information being passed from one step to another.</td></tr>
+            <tr><td><strong>Webhook URL</strong></td><td>A receiving address where one system can send event data.</td></tr>
+            <tr><td><strong>API key / access token</strong></td><td>A credential used to authorize access.</td></tr>
+            <tr><td><strong>Run history / logs</strong></td><td>A record of what happened when the workflow ran.</td></tr>
+            <tr><td><strong>Output fields</strong></td><td>Information returned by a step that can be used later.</td></tr>
+            <tr><td><strong>Error message</strong></td><td>A signal that something was missing, blocked, invalid, or rejected.</td></tr>
+          </tbody>
+        </table>
+        <p>The visual interface makes automation easier to build. It does not remove the structure underneath.</p>
+      </section>
+
+      <section id="pattern" class="interactive-panel">
+        <span class="panel-label">Operating Model</span>
+        <h2>4. The basic pattern: how automation steps exchange information</h2>
+        <p>Use this pattern throughout the module:</p>
+        <pre>Captured -> Structured -> Passed -> Received -> Used</pre>
+        <p>Click each part below.</p>
+        <div class="system-flow" id="talkFlow">
+          <button class="flow-card active" data-title="Captured" data-detail="The workflow receives information from a form, email, file, message, spreadsheet row, database record, AI output, or manual entry."><strong>Captured</strong><span>What came in?</span></button>
+          <button class="flow-card" data-title="Structured" data-detail="The information is organized into fields, labels, formats, or output objects the next step can understand."><strong>Structured</strong><span>What shape is it in?</span></button>
+          <button class="flow-card" data-title="Passed" data-detail="The information is sent to another step, action, system, database, AI model, or notification channel."><strong>Passed</strong><span>Where does it go?</span></button>
+          <button class="flow-card" data-title="Received" data-detail="The next step receives the information and checks whether it has the fields, format, and permission needed to continue."><strong>Received</strong><span>Did it arrive?</span></button>
+          <button class="flow-card" data-title="Used" data-detail="The workflow uses the information to create, update, classify, notify, route, summarize, save, or stop for review."><strong>Used</strong><span>What happens next?</span></button>
+        </div>
+        <div class="flow-detail" id="talkDetail">
+          <h3>Captured</h3>
+          <p>The workflow receives information from a form, email, file, message, spreadsheet row, database record, AI output, or manual entry.</p>
+        </div>
+        <p>APIs, webhooks, JSON, field mapping, permissions, and run logs all connect back to one question:</p>
+        <blockquote>Can the next step receive and use the information correctly?</blockquote>
+      </section>
+
+      <section id="mechanics" class="interactive-panel">
+        <span class="panel-label">Core Mechanics</span>
+        <h2>5. Three mechanics to recognize</h2>
+        <p>These are not separate apps. They are parts of how automation systems exchange information.</p>
+        <table>
+          <thead><tr><th>Mechanic</th><th>Professional definition</th><th>Practical role</th></tr></thead>
+          <tbody>
+            <tr><td><strong>API</strong></td><td>An application programming interface: a defined way for one software system to interact with another software system.</td><td>Used when one system needs another system to retrieve data, create something, update something, send something, or return a result.</td></tr>
+            <tr><td><strong>Webhook</strong></td><td>An event-based message sent from one system to another when something happens.</td><td>Used when an event should automatically start or continue a workflow.</td></tr>
+            <tr><td><strong>JSON</strong></td><td>A structured data format used to organize and transmit information as labeled values.</td><td>Used so systems can read, pass, and use information consistently.</td></tr>
+          </tbody>
+        </table>
+        <div class="tabs" role="tablist" aria-label="Mechanic examples">
+          <button class="tab-btn active" data-tab="apiTab">API</button>
+          <button class="tab-btn" data-tab="webhookTab">Webhook</button>
+          <button class="tab-btn" data-tab="jsonTab">JSON</button>
+        </div>
+        <div id="apiTab" class="tab-panel active">
+          <h3>API: one system asks another system to do something</h3>
+          <p>A raw API request can look like this:</p>
+          <pre>POST https://api.examplecrm.com/v1/leads
+Authorization: Bearer API_KEY
+Content-Type: application/json
+
+{
+  "name": "Maria Santos",
+  "email": "maria@email.com",
+  "message": "I want to ask about pricing.",
+  "source": "Website form"
+}</pre>
+          <p>The learner does not need to write this in this track. The point is to recognize the parts that affect whether the workflow works.</p>
+          <table>
+            <thead><tr><th>Part</th><th>What it controls</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Method</strong></td><td>The action type, such as create, retrieve, update, or delete.</td></tr>
+              <tr><td><strong>Endpoint</strong></td><td>The destination, usually a URL or URL path, where the request is sent.</td></tr>
+              <tr><td><strong>Authentication</strong></td><td>The credential, such as an API key, token, or connected account.</td></tr>
+              <tr><td><strong>Body / payload</strong></td><td>The actual information being sent.</td></tr>
+              <tr><td><strong>Response</strong></td><td>What comes back after the request is processed.</td></tr>
+            </tbody>
+          </table>
+          <p>In a no-code builder, the same interaction may appear as: App: CRM. Action: Create Lead. Connection: CRM account. Fields: Name, Email, Message, Source.</p>
+          <blockquote>Design question: What does the receiving system require in order to complete this action?</blockquote>
+        </div>
+        <div id="webhookTab" class="tab-panel">
+          <h3>Webhook: one system tells another system something happened</h3>
+          <p>A webhook is commonly used when an event should start or continue a workflow.</p>
+          <pre>This happened. Here is the information.</pre>
+          <p>Example events: form submitted, payment received, file uploaded, new message arrived, status changed, booking created, lead captured.</p>
+          <p>In no-code tools, a webhook may appear as a webhook URL, custom webhook, trigger URL, instant trigger, “send data to this URL,” or “watch for incoming data.”</p>
+          <pre>https://hook.exampleautomation.com/abc123</pre>
+          <blockquote>Design question: What event should start or continue the workflow, and what information must come with that event?</blockquote>
+        </div>
+        <div id="jsonTab" class="tab-panel">
+          <h3>JSON: information organized as labeled values</h3>
+          <p>JSON is a common structure for information being passed between automation steps.</p>
+          <pre>{
+  "category": "sales",
+  "urgency": "normal",
+  "summary": "Maria is asking about pricing.",
+  "recommended_owner": "Sales Team"
+}</pre>
+          <p>This matters because the next step can use <strong>category</strong> for routing, <strong>urgency</strong> for escalation, <strong>summary</strong> for the notification, and <strong>recommended_owner</strong> for assignment.</p>
+          <blockquote>Design question: What labels and formats does the next step need in order to use the information correctly?</blockquote>
+        </div>
+      </section>
+
+      <section id="mapping" class="interactive-panel">
+        <span class="panel-label">Field Mapping</span>
+        <h2>6. Matching information between steps</h2>
+        <p>Field mapping means connecting information from one step to the correct field in another step.</p>
+        <div class="two-panel">
+          <div class="compare-box">
+            <h3>Form collects</h3>
+            <p><strong>Full Name:</strong> Maria Santos<br />
+            <strong>Email Address:</strong> maria@email.com<br />
+            <strong>Inquiry:</strong> I want to ask about pricing.</p>
+          </div>
+          <div class="compare-box usable">
+            <h3>CRM expects</h3>
+            <p><strong>Name</strong><br />
+            <strong>Email</strong><br />
+            <strong>Message</strong></p>
+          </div>
+        </div>
+        <p>The builder maps Full Name to Name, Email Address to Email, and Inquiry to Message.</p>
+        <p>This becomes risky when field names, formats, or meanings are unclear.</p>
+        <table>
+          <thead><tr><th>Field</th><th>Possible confusion</th></tr></thead>
+          <tbody>
+            <tr><td>Contact</td><td>Could mean phone, email, or person name.</td></tr>
+            <tr><td>Date</td><td>Could mean submitted date, appointment date, or due date.</td></tr>
+            <tr><td>Status</td><td>Could mean lead status, payment status, or task status.</td></tr>
+            <tr><td>Owner</td><td>Could mean salesperson, account manager, or reviewer.</td></tr>
+          </tbody>
+        </table>
+        <blockquote>Design question: Does each step know exactly what each field means and where it should go next?</blockquote>
+      </section>
+
+      <section id="permissions" class="interactive-panel">
+        <span class="panel-label">Access</span>
+        <h2>7. Authentication and permissions</h2>
+        <p>Tool communication often requires permission. A connected account, API key, access token, or authorization screen tells the receiving system that the request is allowed.</p>
+        <div class="grid">
+          <div class="card"><h3>Read</h3><p>The workflow can retrieve existing information.</p></div>
+          <div class="card"><h3>Create</h3><p>The workflow can create a new record, message, file, task, or event.</p></div>
+          <div class="card"><h3>Update</h3><p>The workflow can change an existing record, status, row, or document.</p></div>
+        </div>
+        <p>A workflow can be designed correctly and still fail because the connection does not have the right access.</p>
+        <p>Permission issues usually appear as access denied, unauthorized, invalid token, expired connection, insufficient permissions, account not connected, or app not approved.</p>
+        <blockquote>Design question: Does this workflow have the right access to perform the action it needs to perform?</blockquote>
+      </section>
+
+      <section id="failures" class="interactive-panel">
+        <span class="panel-label">Troubleshooting</span>
+        <h2>8. Common communication failures</h2>
+        <p>Most automation failures are not mysterious. They usually come from a specific handoff point.</p>
+        <table>
+          <thead><tr><th>Failure point</th><th>What it means</th></tr></thead>
+          <tbody>
+            <tr><td>Trigger did not start</td><td>The event did not happen, or the trigger was not set correctly.</td></tr>
+            <tr><td>Missing field</td><td>Required information was not captured or passed.</td></tr>
+            <tr><td>Wrong format</td><td>The next step rejected the value because it was formatted incorrectly.</td></tr>
+            <tr><td>Wrong field mapping</td><td>The right information went to the wrong place.</td></tr>
+            <tr><td>Permission blocked</td><td>The connection does not have access to perform the action.</td></tr>
+            <tr><td>Duplicate record</td><td>The system received information it already had.</td></tr>
+            <tr><td>AI output unusable</td><td>AI returned text the next step could not read or use.</td></tr>
+            <tr><td>Response not handled</td><td>The workflow did not define what to do after success or error.</td></tr>
+          </tbody>
+        </table>
+        <p>The practical troubleshooting question is:</p>
+        <blockquote>Where did the handoff break?</blockquote>
+        <div class="checklist" id="failureQuiz">
+          <div class="check-row"><span>Lead did not appear in CRM.</span><select data-answer="missing"><option value="">Choose likely cause</option><option value="trigger">Trigger</option><option value="missing">Missing field or mapping</option><option value="ai">AI output</option></select><span>Check whether required fields reached the CRM step.</span></div>
+          <div class="check-row"><span>Workflow never started.</span><select data-answer="trigger"><option value="">Choose likely cause</option><option value="trigger">Trigger/webhook</option><option value="permission">Permission</option><option value="json">JSON</option></select><span>Check event source, trigger setup, or webhook URL.</span></div>
+          <div class="check-row"><span>AI category cannot be used in routing.</span><select data-answer="ai"><option value="">Choose likely cause</option><option value="trigger">Trigger</option><option value="ai">Unstructured AI output</option><option value="permission">Permission</option></select><span>Check whether AI returned a consistent field like category.</span></div>
+        </div>
+        <div class="button-row"><button class="button small" id="checkFailureQuiz">Check answers</button></div>
+        <p class="mini-score" id="failureQuizResult"></p>
+      </section>
+
+      <section id="example" class="interactive-panel">
+        <span class="panel-label">Practical Example</span>
+        <h2>9. Inquiry intake workflow</h2>
+        <p><strong>Workflow goal:</strong> Capture a website inquiry, classify it, save it, and notify the right person for review.</p>
+        <pre>Inquiry submitted
+-> information received
+-> inquiry classified
+-> record created
+-> notification sent
+-> human reviews</pre>
+        <h3>Tool communication map</h3>
+        <table>
+          <thead><tr><th>Step</th><th>What happens</th><th>Communication mechanic</th></tr></thead>
+          <tbody>
+            <tr><td>Form submitted</td><td>Inquiry is captured.</td><td>Trigger or webhook</td></tr>
+            <tr><td>Workflow receives data</td><td>Fields are received by the automation.</td><td>Webhook / form trigger</td></tr>
+            <tr><td>AI classifies inquiry</td><td>Message is sent for classification.</td><td>API</td></tr>
+            <tr><td>Record is created</td><td>Lead is saved in a CRM or tracker.</td><td>API / app action</td></tr>
+            <tr><td>Notification sent</td><td>Sales or support is alerted.</td><td>API / app action</td></tr>
+            <tr><td>Human reviews</td><td>Person checks and acts.</td><td>Review point</td></tr>
+          </tbody>
+        </table>
+        <p><strong>CRM</strong> means customer relationship management system. It is used to manage leads, customers, and sales or service activity.</p>
+      </section>
+
+      <section id="communication-map" class="interactive-panel">
+        <span class="panel-label">Activity</span>
+        <h2>10. Build your Tool Communication Map</h2>
+        <p>Use one workflow from Module 01. Map how information moves when the workflow becomes buildable.</p>
+        <div class="builder-grid">
+          <div class="field-block"><label for="workflowName">Workflow name</label><input id="workflowName" placeholder="Example: Inquiry intake workflow" /></div>
+          <div class="field-block"><label for="startEvent">Starting event</label><input id="startEvent" placeholder="Example: Website form submitted" /></div>
+          <div class="field-block"><label for="capturedInfo">Information captured</label><textarea id="capturedInfo" placeholder="Name, email, message, source, timestamp"></textarea></div>
+          <div class="field-block"><label for="receivingStep">Step or tool receiving it</label><textarea id="receivingStep" placeholder="Workflow trigger, AI step, CRM, tracker, notification"></textarea></div>
+          <div class="field-block"><label for="requiredStructure">Required structure or format</label><textarea id="requiredStructure" placeholder="Required fields, date format, email format, JSON fields"></textarea></div>
+          <div class="field-block"><label for="nextAction">Next action</label><textarea id="nextAction" placeholder="Create lead, classify inquiry, notify owner, save record"></textarea></div>
+          <div class="field-block"><label for="failurePoints">Possible failure points</label><textarea id="failurePoints" placeholder="Missing email, wrong mapping, expired connection, unusable AI output"></textarea></div>
+          <div class="field-block"><label for="reviewPoint">Human review point</label><textarea id="reviewPoint" placeholder="Sales lead reviews before response is sent"></textarea></div>
+        </div>
+        <div class="button-row">
+          <button class="button primary" id="generateMap">Generate map summary</button>
+          <button class="button" id="clearMap">Clear</button>
+        </div>
+        <pre class="output-box" id="mapOutput">Your communication map summary will appear here.</pre>
+      </section>
+
+      <section id="next">
+        <span class="panel-label">Completion</span>
+        <h2>11. Module 02 completion check</h2>
+        <p>You are ready to move on when you can explain:</p>
+        <ul>
+          <li>How automation steps exchange information</li>
+          <li>Why information structure matters</li>
+          <li>What APIs do at a practical level</li>
+          <li>What webhooks do at a practical level</li>
+          <li>What JSON does at a practical level</li>
+          <li>How permissions affect tool communication</li>
+          <li>How field mapping affects workflow success</li>
+          <li>How to identify likely failure points</li>
+          <li>How tool communication affects workflow design before building</li>
+        </ul>
+        <blockquote>At this point, you still do not need to master a specific automation platform. You are learning how tool communication works so Module 03 can focus on building inside a no-code automation environment.</blockquote>
+        <div class="button-row">
+          <a class="button" href="module-01.html">Back to Module 01</a>
+          <a class="button primary" href="index.html">Course Home</a>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <p>© JENX.AI. Learning AI Automation: Track 1 - No Code Path.</p>
+</footer>
+
+<script>
+const flowButtons = document.querySelectorAll('#talkFlow .flow-card');
+const detail = document.getElementById('talkDetail');
+flowButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    flowButtons.forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+    detail.innerHTML = '<h3>' + button.dataset.title + '</h3><p>' + button.dataset.detail + '</p>';
+  });
+});
+
+const tabButtons = document.querySelectorAll('.tab-btn');
+tabButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    tabButtons.forEach(item => item.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+    button.classList.add('active');
+    document.getElementById(button.dataset.tab).classList.add('active');
+  });
+});
+
+document.getElementById('checkFailureQuiz').addEventListener('click', () => {
+  const selects = document.querySelectorAll('#failureQuiz select');
+  let correct = 0;
+  selects.forEach(select => {
+    if (select.value === select.dataset.answer) correct++;
+  });
+  const result = document.getElementById('failureQuizResult');
+  result.textContent = 'Score: ' + correct + ' of ' + selects.length + '. Review any missed item by asking: Where did the handoff break?';
+});
+
+const fields = ['workflowName','startEvent','capturedInfo','receivingStep','requiredStructure','nextAction','failurePoints','reviewPoint'];
+document.getElementById('generateMap').addEventListener('click', () => {
+  const value = id => document.getElementById(id).value.trim() || '[not defined]';
+  const output = `Tool Communication Map\n\nWorkflow: ${value('workflowName')}\nStarting event: ${value('startEvent')}\n\nInformation captured:\n${value('capturedInfo')}\n\nReceiving step or tool:\n${value('receivingStep')}\n\nRequired structure or format:\n${value('requiredStructure')}\n\nNext action:\n${value('nextAction')}\n\nPossible failure points:\n${value('failurePoints')}\n\nHuman review point:\n${value('reviewPoint')}\n\nBuild check: Can the next step receive and use the information correctly?`;
+  document.getElementById('mapOutput').textContent = output;
+});
+
+document.getElementById('clearMap').addEventListener('click', () => {
+  fields.forEach(id => document.getElementById(id).value = '');
+  document.getElementById('mapOutput').textContent = 'Your communication map summary will appear here.';
+});
+</script>
+</body>
+</html>
