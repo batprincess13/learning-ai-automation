@@ -1,0 +1,67 @@
+{
+  "skills": [
+    {
+      "name": "Accuracy Control",
+      "triggers": [
+        "Prio Accuracy",
+        "ACC"
+      ],
+      "automatic": "Substantive tasks",
+      "path": "/Skills/Accuracy Control/SKILL.md"
+    },
+    {
+      "name": "Context Integrity",
+      "triggers": [
+        "Stay aligned"
+      ],
+      "automatic": "Long/complex conversations and context drift",
+      "path": "/Skills/Context Integrity/SKILL.md"
+    },
+    {
+      "name": "Housekeeper1",
+      "triggers": [
+        "Housekeeping"
+      ],
+      "automatic": "Never automatic",
+      "path": "/Skills/Housekeeper1/SKILL.md"
+    },
+    {
+      "name": "Natural Writing",
+      "triggers": [
+        "Nat-write this",
+        "NAT WRITE"
+      ],
+      "automatic": "Natural voice-preserving writing",
+      "path": "/Skills/Natural Writing/SKILL.md"
+    },
+    {
+      "name": "PSDM",
+      "triggers": [
+        "PSDM",
+        "LSS",
+        "RCA",
+        "Solve"
+      ],
+      "automatic": "Problem solving, failures and troubleshooting",
+      "path": "/Skills/PSDM/SKILL.md"
+    },
+    {
+      "name": "Research Integrity",
+      "triggers": [
+        "Raw Research",
+        "Primary Research"
+      ],
+      "automatic": "Explicit research and evidence investigation",
+      "path": "/Skills/Research Integrity/SKILL.md"
+    },
+    {
+      "name": "Thinking Partner",
+      "triggers": [
+        "Think"
+      ],
+      "automatic": "Explicit trigger only",
+      "path": "/Skills/Thinking Partner/SKILL.md"
+    }
+  ],
+  "source": "Snapshot of ChatGPT Library /Skills/SKILL_REGISTRY.md on 2026-10-20. Not synchronized."
+}
